@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Text, Flex, SimpleGrid, Spacer } from "@chakra-ui/react";
+import {
+  Container,
+  Flex,
+  Heading,
+  SimpleGrid,
+  Spacer,
+  Text,
+} from "@chakra-ui/react";
 
 import { FilterOptions } from "../components/FilterOptions";
 import { FreeRoomCard } from "../components/FreeRoomCard";
@@ -14,16 +21,22 @@ const numberDayToStringDay = {
   5: "FRI",
 };
 
+const isWeekDay = (numberDay: number) => numberDay <= 5;
+
 const numberDay = new Date().getDay();
-const stringDay = numberDayToStringDay[numberDay];
-const rooms = Object.keys(room_occupancy[stringDay]);
+
+let stringDay: string, rooms: any[];
+if (isWeekDay(numberDay)) {
+  stringDay = numberDayToStringDay[numberDay];
+  rooms = Object.keys(room_occupancy[stringDay]).sort();
+}
 
 const Index = () => {
   const [searchText, setSearchText] = useState<string>("");
 
   const handleSearchTextChange = (e: any) => setSearchText(e.target.value);
 
-  return (
+  return isWeekDay(numberDay) ? (
     <Flex
       direction="column"
       w="full"
@@ -51,6 +64,23 @@ const Index = () => {
       <Text textAlign="center" fontSize="xs" py="4">
         2021 © Okkar
       </Text>
+    </Flex>
+  ) : (
+    <Flex
+      direction="column"
+      w="full"
+      h="auto"
+      minH="100vh"
+      bg="gray.100"
+      mb="-4"
+      align="center"
+      justify="center"
+    >
+      <Container>
+        <Heading as="h1" textAlign="center">
+          It is the weekendssss! Rest up and come back on Monday 😊
+        </Heading>
+      </Container>
     </Flex>
   );
 };
