@@ -16,7 +16,7 @@ const locationColors = {
 
 export const FreeRoomCard: FC<IFreeRoomCard> = ({ location, time, room }) => {
   return (
-    <Box w="auto" mx="auto" mb="4" p="4" shadow="base" rounded="md" bg="white">
+    <Box w="full" mx="auto" mb="4" p="4" shadow="base" rounded="md" bg="white">
       <Flex justifyContent="space-between" alignItems="center">
         <Badge
           variant="outline"

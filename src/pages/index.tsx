@@ -1,4 +1,4 @@
-import { Container, Box } from "@chakra-ui/react";
+import { Container, Box, SimpleGrid } from "@chakra-ui/react";
 
 import { BadgeTimeSlotsHeader } from "../components/BadgeTimeSlotsHeader";
 import { FreeRoomCard, IFreeRoomCard } from "../components/FreeRoomCard";
@@ -26,9 +26,9 @@ const data = [
 
 const Index = () => {
   return (
-    <Box w="full" h="auto" bg="gray.100" mb="-4">
+    <Box w="full" h="auto" minH="100vh" bg="gray.100" mb="-4">
       <BadgeTimeSlotsHeader />
-      <Container>
+      <SimpleGrid minChildWidth="300px" spacing="4" mt="4" px="4">
         {data.map((item: IFreeRoomCard, i: number) => (
           <FreeRoomCard
             key={i}
@@ -37,7 +37,7 @@ const Index = () => {
             room={item.room}
           ></FreeRoomCard>
         ))}
-      </Container>
+      </SimpleGrid>
       <Box textAlign="center" fontSize="xs" py="4">
         2021 © Okkar, YingSheng, Raymond
       </Box>
