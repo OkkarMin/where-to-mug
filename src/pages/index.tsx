@@ -3,6 +3,7 @@ import {
   Box,
   Input,
   HStack,
+  VStack,
   Flex,
   Button,
   SimpleGrid,
@@ -62,37 +63,43 @@ const Index = () => {
       bg="gray.100"
       mb="-4"
     >
-      <HStack p={["4", "8"]}>
-        <Input
-          borderColor="#01A0DC"
-          placeholder="Enter room name"
-          colorScheme="linkedin"
-          variant="filled"
-        />
+      <HStack p={["4", "8"]} align="flex-end">
+        <VStack w="full" align="center">
+          <Text>Enter room name</Text>
+          <Input
+            borderColor="#01A0DC"
+            placeholder="TR+0"
+            colorScheme="linkedin"
+            variant="filled"
+          />
+        </VStack>
 
         <Text>or...</Text>
 
-        <Menu placement="auto">
-          <MenuButton
-            as={Button}
-            colorScheme="linkedin"
-            size="md"
-            width="full"
-            leftIcon={<TimeIcon />}
-            rightIcon={<ChevronDownIcon />}
-          >
-            Timeslot
-          </MenuButton>
-          <MenuList>
-            <MenuGroup title="Timeslot">
-              {timeSlots.map((slot: string, i: number) => (
-                <MenuItem key={i} icon={<TimeIcon />}>
-                  {slot}
-                </MenuItem>
-              ))}
-            </MenuGroup>
-          </MenuList>
-        </Menu>
+        <VStack w="full" align="center">
+          <Text>Select timeslot</Text>
+          <Menu placement="auto">
+            <MenuButton
+              as={Button}
+              colorScheme="linkedin"
+              size="md"
+              width="full"
+              leftIcon={<TimeIcon />}
+              rightIcon={<ChevronDownIcon />}
+            >
+              Timeslot
+            </MenuButton>
+            <MenuList>
+              <MenuGroup title="Timeslot">
+                {timeSlots.map((slot: string, i: number) => (
+                  <MenuItem key={i} icon={<TimeIcon />}>
+                    {slot}
+                  </MenuItem>
+                ))}
+              </MenuGroup>
+            </MenuList>
+          </Menu>
+        </VStack>
       </HStack>
       <SimpleGrid minChildWidth="300px" spacingX="4" mt="1" px={["4", "8"]}>
         {data.map((item: IFreeRoomCard, i: number) => (
