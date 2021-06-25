@@ -37,7 +37,7 @@ export const FilterOptions: FC<{
   return (
     <HStack p={["4", "8"]} align="flex-end">
       <VStack w="full" align="center">
-        <Text>Enter room name</Text>
+        <Text>Enter room</Text>
         <Input
           value={searchText}
           onChange={handleSearchTextChange}
