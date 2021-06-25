@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ChangeEventHandler } from "react";
 import {
   Button,
   HStack,
@@ -30,12 +30,17 @@ const timeSlots = [
   "2130-2220",
 ];
 
-export const FilterOptions: FC<{}> = () => {
+export const FilterOptions: FC<{
+  searchText: string;
+  handleSearchTextChange: ChangeEventHandler;
+}> = ({ searchText, handleSearchTextChange }) => {
   return (
     <HStack p={["4", "8"]} align="flex-end">
       <VStack w="full" align="center">
         <Text>Enter room name</Text>
         <Input
+          value={searchText}
+          onChange={handleSearchTextChange}
           borderColor="#01A0DC"
           placeholder="TR+13"
           colorScheme="linkedin"

@@ -14,10 +14,14 @@ const numberDayToStringDay = {
   5: "FRI",
 };
 
+const numberDay = new Date().getDay();
+const stringDay = numberDayToStringDay[numberDay];
+const rooms = Object.keys(room_occupancy[stringDay]);
+
 const Index = () => {
-  const numberDay = new Date().getDay();
-  const stringDay = numberDayToStringDay[numberDay];
-  const rooms = Object.keys(room_occupancy[stringDay]).sort();
+  const [searchText, setSearchText] = useState<string>("");
+
+  const handleSearchTextChange = (e: any) => setSearchText(e.target.value);
 
   return (
     <Flex
@@ -28,15 +32,20 @@ const Index = () => {
       bg="gray.100"
       mb="-4"
     >
-      <FilterOptions />
+      <FilterOptions
+        searchText={searchText}
+        handleSearchTextChange={handleSearchTextChange}
+      />
       <SimpleGrid minChildWidth="300px" spacingX="4" mt="1" px={["4", "8"]}>
-        {rooms.map((room: string, i: number) => (
-          <FreeRoomCard
-            key={i}
-            timeSlots={room_occupancy[stringDay][room]}
-            room={room}
-          />
-        ))}
+        {rooms
+          .filter((room: string) => room.includes(searchText.toUpperCase()))
+          .map((room: string, i: number) => (
+            <FreeRoomCard
+              key={i}
+              timeSlots={room_occupancy[stringDay][room]}
+              room={room}
+            />
+          ))}
       </SimpleGrid>
       <Spacer />
       <Text textAlign="center" fontSize="xs" py="4">
