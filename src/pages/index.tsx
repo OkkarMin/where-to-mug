@@ -37,7 +37,7 @@ const timeSlots = [
 ];
 
 const Index = () => {
-  const rooms = Object.keys(room_occupancy.MON);
+  const rooms = Object.keys(room_occupancy.MON).sort();
 
   return (
     <Flex
@@ -53,7 +53,7 @@ const Index = () => {
           <Text>Enter room name</Text>
           <Input
             borderColor="#01A0DC"
-            placeholder="TR+0"
+            placeholder="TR+13"
             colorScheme="linkedin"
             variant="filled"
           />
