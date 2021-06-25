@@ -19,27 +19,6 @@ import { FreeRoomCard } from "../components/FreeRoomCard";
 
 import room_occupancy from "../../room_occupancy.json";
 
-const data = [
-  { location: "South Spine", time: "0830-0930", room: "SWLAB3" },
-  { location: "North Spine", time: "1230-1330", room: "TR+9" },
-  { location: "North Spine", time: "1530-1620", room: "TR+32" },
-  { location: "South Spine", time: "0830-0930", room: "SWLAB3" },
-  { location: "North Spine", time: "1230-1330", room: "TR+9" },
-  { location: "North Spine", time: "1530-1620", room: "TR+32" },
-  { location: "South Spine", time: "0830-0930", room: "SWLAB3" },
-  { location: "North Spine", time: "1230-1330", room: "TR+9" },
-  { location: "North Spine", time: "1530-1620", room: "TR+32" },
-  { location: "South Spine", time: "0830-0930", room: "SWLAB3" },
-  { location: "North Spine", time: "1230-1330", room: "TR+9" },
-  { location: "North Spine", time: "1530-1620", room: "TR+32" },
-  { location: "South Spine", time: "0830-0930", room: "SWLAB3" },
-  { location: "North Spine", time: "1230-1330", room: "TR+9" },
-  { location: "North Spine", time: "1530-1620", room: "TR+32" },
-  { location: "South Spine", time: "0830-0930", room: "SWLAB3" },
-  { location: "North Spine", time: "1230-1330", room: "TR+9" },
-  { location: "North Spine", time: "1530-1620", room: "TR+32" },
-];
-
 const timeSlots = [
   "0830-0930",
   "0930-1030",
