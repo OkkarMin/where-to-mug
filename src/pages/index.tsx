@@ -28,7 +28,7 @@ const Index = () => {
   return (
     <Box w="full" h="auto" minH="100vh" bg="gray.100" mb="-4">
       <BadgeTimeSlotsHeader />
-      <SimpleGrid minChildWidth="300px" spacing="4" mt="4" px="4">
+      <SimpleGrid minChildWidth="300px" spacing="4" mt="4" px={["4", "8"]}>
         {data.map((item: IFreeRoomCard, i: number) => (
           <FreeRoomCard
             key={i}
