@@ -1,6 +1,5 @@
 import {
   Text,
-  Box,
   Input,
   HStack,
   VStack,
@@ -16,7 +15,9 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon, TimeIcon } from "@chakra-ui/icons";
 
-import { FreeRoomCard, IFreeRoomCard } from "../components/FreeRoomCard";
+import { FreeRoomCard } from "../components/FreeRoomCard";
+
+import room_occupancy from "../../room_occupancy.json";
 
 const data = [
   { location: "South Spine", time: "0830-0930", room: "SWLAB3" },
@@ -47,13 +48,18 @@ const timeSlots = [
   "1230-1330",
   "1330-1430",
   "1430-1530",
+  "1530-1630",
   "1630-1730",
   "1730-1830",
   "1830-1930",
   "1930-2030",
+  "2030-2130",
+  "2130-2230",
 ];
 
 const Index = () => {
+  const rooms = Object.keys(room_occupancy.MON);
+
   return (
     <Flex
       direction="column"
@@ -102,19 +108,18 @@ const Index = () => {
         </VStack>
       </HStack>
       <SimpleGrid minChildWidth="300px" spacingX="4" mt="1" px={["4", "8"]}>
-        {data.map((item: IFreeRoomCard, i: number) => (
+        {rooms.map((room: string, i: number) => (
           <FreeRoomCard
             key={i}
-            location={item.location}
-            time={item.time}
-            room={item.room}
-          ></FreeRoomCard>
+            timeSlots={room_occupancy.MON[room]}
+            room={room}
+          />
         ))}
       </SimpleGrid>
       <Spacer />
-      <Box textAlign="center" fontSize="xs" py="4">
-        2021 © Okkar, YingSheng, Raymond
-      </Box>
+      <Text textAlign="center" fontSize="xs" py="4">
+        2021 © Okkar
+      </Text>
     </Flex>
   );
 };

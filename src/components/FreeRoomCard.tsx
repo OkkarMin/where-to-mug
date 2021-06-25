@@ -1,20 +1,34 @@
 import { FC } from "react";
-import { Flex, Badge, Box, Text, Heading, Icon } from "@chakra-ui/react";
-import { TimeIcon } from "@chakra-ui/icons";
-import { IoLocationOutline } from "react-icons/io5";
+import { Flex, Badge, Box, Heading } from "@chakra-ui/react";
+import { NotAllowedIcon, TimeIcon } from "@chakra-ui/icons";
 
 export interface IFreeRoomCard {
-  location: string;
-  time: string;
+  timeSlots: Record<string, boolean>;
   room: string;
 }
 
-const locationColors = {
-  "North Spine": "red",
-  "South Spine": "green",
+const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
+  slot,
+  isFree,
+}) => {
+  return (
+    <Badge
+      px={3}
+      py={1}
+      m="1"
+      rounded={isFree ? "full" : "xs"}
+      textTransform="uppercase"
+      colorScheme={isFree ? "linkedin" : "red"}
+      variant="subtle"
+      w="110px"
+    >
+      {isFree ? <TimeIcon mr="2" /> : <NotAllowedIcon mr="2" />}
+      {slot}
+    </Badge>
+  );
 };
 
-export const FreeRoomCard: FC<IFreeRoomCard> = ({ location, time, room }) => {
+export const FreeRoomCard: FC<IFreeRoomCard> = ({ timeSlots, room }) => {
   return (
     <Box
       w="full"
@@ -23,34 +37,18 @@ export const FreeRoomCard: FC<IFreeRoomCard> = ({ location, time, room }) => {
       p="4"
       shadow="base"
       rounded="md"
-      bg="white"
+      bg="#F8F8FF"
       _hover={{ shadow: "2xl" }}
     >
-      <Flex justifyContent="space-between" alignItems="center">
-        <Badge
-          variant="outline"
-          colorScheme={locationColors[location]}
-          rounded="md"
-        >
-          <Icon as={IoLocationOutline} mr="1" />
-          {location}
-        </Badge>
-        <Badge
-          px={3}
-          py={1}
-          rounded="md"
-          textTransform="uppercase"
-          colorScheme="linkedin"
-          variant="subtle"
-        >
-          <TimeIcon mr="2" />
-          {time}
-        </Badge>
-      </Flex>
-      <Box>
-        <Heading as="h1" fontSize="lg" mt="2">
+      <Box alignContent="center">
+        <Heading as="h1" fontSize="xl">
           {room}
         </Heading>
+        <Flex mt="4" justify="space-around" wrap="wrap">
+          {Object.keys(timeSlots).map((slot: string, i: number) => (
+            <TimeSlotBadge key={i} slot={slot} isFree={timeSlots[slot]} />
+          ))}
+        </Flex>
       </Box>
     </Box>
   );
