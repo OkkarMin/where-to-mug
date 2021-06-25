@@ -37,7 +37,7 @@ export const FreeRoomCard: FC<IFreeRoomCard> = ({ timeSlots, room }) => {
       p="4"
       shadow="base"
       rounded="md"
-      bg="#F8F8FF"
+      bg="ghostwhite"
       _hover={{ shadow: "2xl" }}
     >
       <Box alignContent="center">
