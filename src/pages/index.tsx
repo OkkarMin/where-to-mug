@@ -23,7 +23,8 @@ const numberDayToStringDay = {
 
 const isWeekDay = (numberDay: number) => numberDay <= 5;
 
-const numberDay = new Date().getDay();
+// const numberDay = new Date().getDay();
+const numberDay = 5;
 
 let stringDay: string, rooms: any[];
 if (isWeekDay(numberDay)) {
