@@ -52,7 +52,7 @@ export const FilterOptions: FC<{
 
       <VStack w="full" align="center">
         <Text>Select timeslot</Text>
-        <Menu placement="auto">
+        <Menu>
           <MenuButton
             as={Button}
             colorScheme="linkedin"
