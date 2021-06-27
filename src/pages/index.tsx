@@ -1,17 +1,11 @@
 import { useState } from "react";
-import {
-  Container,
-  Flex,
-  Heading,
-  SimpleGrid,
-  Spacer,
-  Text,
-} from "@chakra-ui/react";
+import { Flex, SimpleGrid, Spacer, Text } from "@chakra-ui/react";
 
 import { FilterOptions } from "../components/FilterOptions";
 import { FreeRoomCard } from "../components/FreeRoomCard";
 
 import room_occupancy from "../../room_occupancy.json";
+import { WeekendMessage } from "./components/WeekendMessage";
 
 const numberDayToStringDay = {
   1: "MON",
@@ -25,7 +19,7 @@ const isWeekDay = (numberDay: number) => numberDay <= 5;
 
 // const numberDay = new Date().getDay();
 // !!! Remove this hardcoded line in production
-const numberDay = 5;
+const numberDay = 6;
 
 let stringDay: string, rooms: any[];
 if (isWeekDay(numberDay)) {
@@ -80,22 +74,7 @@ const Index = () => {
       </Text>
     </Flex>
   ) : (
-    <Flex
-      direction="column"
-      w="full"
-      h="auto"
-      minH="100vh"
-      bg="gray.100"
-      mb="-4"
-      align="center"
-      justify="center"
-    >
-      <Container>
-        <Heading as="h1" textAlign="center">
-          It is the weekendssss! Rest up and come back on Monday 😊
-        </Heading>
-      </Container>
-    </Flex>
+    <WeekendMessage />
   );
 };
 
