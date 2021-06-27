@@ -13,7 +13,7 @@ export const FreeRoomsCardList: FC<{
   const rooms = Object.keys(room_occupancy[stringDay]).sort();
 
   return (
-    <SimpleGrid minChildWidth="340px" spacing="4" mt="1" px={["4", "8"]}>
+    <SimpleGrid minChildWidth="340px" spacing="2" mt="4" px={["4", "8"]}>
       {rooms
         .filter((room: string) => {
           const hasRoomName = room.includes(searchText.toUpperCase());
