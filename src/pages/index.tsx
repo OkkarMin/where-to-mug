@@ -35,8 +35,10 @@ if (isWeekDay(numberDay)) {
 
 const Index = () => {
   const [searchText, setSearchText] = useState<string>("");
+  const [timeSlot, setTimeSlot] = useState<string>("All");
 
   const handleSearchTextChange = (e: any) => setSearchText(e.target.value);
+  const handleTimeSlotChange = (e: any) => setTimeSlot(e.target.value);
 
   return isWeekDay(numberDay) ? (
     <Flex
@@ -50,10 +52,20 @@ const Index = () => {
       <FilterOptions
         searchText={searchText}
         handleSearchTextChange={handleSearchTextChange}
+        timeSlot={timeSlot}
+        handleTimeSlotChange={handleTimeSlotChange}
       />
       <SimpleGrid minChildWidth="340px" spacing="4" mt="1" px={["4", "8"]}>
         {rooms
-          .filter((room: string) => room.includes(searchText.toUpperCase()))
+          .filter((room: string) => {
+            const hasRoomName = room.includes(searchText.toUpperCase());
+            const hasAvailableSlot =
+              timeSlot == "All"
+                ? true
+                : room_occupancy[stringDay][room][timeSlot];
+
+            return hasRoomName && hasAvailableSlot;
+          })
           .map((room: string, i: number) => (
             <FreeRoomCard
               key={i}

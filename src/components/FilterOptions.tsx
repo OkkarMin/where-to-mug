@@ -1,4 +1,4 @@
-import { FC, ChangeEventHandler } from "react";
+import { FC, ChangeEventHandler, MouseEventHandler } from "react";
 import {
   Button,
   HStack,
@@ -14,6 +14,7 @@ import {
 import { TimeIcon, ChevronDownIcon } from "@chakra-ui/icons";
 
 const timeSlots = [
+  "All",
   "0830-0920",
   "0930-1020",
   "1030-1120",
@@ -33,7 +34,14 @@ const timeSlots = [
 export const FilterOptions: FC<{
   searchText: string;
   handleSearchTextChange: ChangeEventHandler;
-}> = ({ searchText, handleSearchTextChange }) => {
+  timeSlot: string;
+  handleTimeSlotChange: MouseEventHandler;
+}> = ({
+  searchText,
+  handleSearchTextChange,
+  timeSlot,
+  handleTimeSlotChange,
+}) => {
   return (
     <HStack p={["4", "8"]} align="flex-end">
       <VStack w="full" align="center">
@@ -61,12 +69,17 @@ export const FilterOptions: FC<{
             leftIcon={<TimeIcon />}
             rightIcon={<ChevronDownIcon />}
           >
-            Timeslot
+            {timeSlot}
           </MenuButton>
           <MenuList>
             <MenuGroup title="Timeslot">
               {timeSlots.map((slot: string, i: number) => (
-                <MenuItem key={i} icon={<TimeIcon />}>
+                <MenuItem
+                  value={slot}
+                  key={i}
+                  icon={<TimeIcon />}
+                  onClick={handleTimeSlotChange}
+                >
                   {slot}
                 </MenuItem>
               ))}
