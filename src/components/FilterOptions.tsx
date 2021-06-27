@@ -1,7 +1,7 @@
 import { FC, ChangeEventHandler, MouseEventHandler } from "react";
 import {
   Button,
-  HStack,
+  Flex,
   Input,
   Menu,
   MenuButton,
@@ -10,7 +10,7 @@ import {
   MenuItem,
   VStack,
 } from "@chakra-ui/react";
-import { TimeIcon, ChevronDownIcon, AddIcon } from "@chakra-ui/icons";
+import { TimeIcon, ChevronDownIcon, CalendarIcon } from "@chakra-ui/icons";
 
 const timeSlots = [
   "All",
@@ -30,27 +30,61 @@ const timeSlots = [
   "2130-2220",
 ];
 
+const dayList = ["MON", "TUE", "WED", "THU", "FRI"];
+
 export const FilterOptions: FC<{
   searchText: string;
   handleSearchTextChange: ChangeEventHandler;
   timeSlot: string;
   handleTimeSlotChange: MouseEventHandler;
+  day: string;
+  handleDayChange: MouseEventHandler;
 }> = ({
   searchText,
   handleSearchTextChange,
   timeSlot,
   handleTimeSlotChange,
+  day,
+  handleDayChange,
 }) => {
   return (
-    <HStack mt="2" px={["4", "8"]} align="center">
+    <Flex direction={["Column", "Row"]} mt="2" px={["4", "8"]} align="center">
       <Menu>
         <MenuButton
           as={Button}
           colorScheme="linkedin"
           size="md"
-          width="full"
+          width={["full", "20vw"]}
+          leftIcon={<CalendarIcon />}
+          rightIcon={<ChevronDownIcon />}
+          margin="5px"
+        >
+          {day}
+        </MenuButton>
+        <MenuList>
+          <MenuGroup title="Day">
+            {dayList.map((days: string, i: number) => (
+              <MenuItem
+                value={days}
+                key={i}
+                icon={<CalendarIcon />}
+                onClick={handleDayChange}
+              >
+                {days}
+              </MenuItem>
+            ))}
+          </MenuGroup>
+        </MenuList>
+      </Menu>
+      <Menu>
+        <MenuButton
+          as={Button}
+          colorScheme="linkedin"
+          size="md"
+          width={["full", "20vw"]}
           leftIcon={<TimeIcon />}
           rightIcon={<ChevronDownIcon />}
+          margin="5px"
         >
           {timeSlot}
         </MenuButton>
@@ -76,7 +110,8 @@ export const FilterOptions: FC<{
         placeholder="Room name... AMDLAB | ART-01-19"
         colorScheme="linkedin"
         variant="filled"
+        margin="5px"
       />
-    </HStack>
+    </Flex>
   );
 };

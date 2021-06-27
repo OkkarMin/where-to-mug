@@ -5,24 +5,24 @@ import { DisclaimerModel } from "./DisclaimerModel";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { FilterOptions } from "./FilterOptions";
 
-const numberDayToStringDay = {
-  1: "MON",
-  2: "TUE",
-  3: "WED",
-  4: "THU",
-  5: "FRI",
+const fullDayList = {
+  MON: "Monday",
+  TUE: "Tuesday",
+  WED: "Wednesday",
+  THU: "Thursday",
+  FRI: "Friday",
 };
 
-export const Main: FC<{ numberDay: number }> = ({ numberDay }) => {
-  const stringDay = numberDayToStringDay[numberDay];
-
+export const Main = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [timeSlot, setTimeSlot] = useState<string>("All");
+  const [day, setDay] = useState<string>("MON");
 
   const handleSearchTextChange = (e: ChangeEvent<any>) =>
     setSearchText(e.target.value);
   const handleTimeSlotChange = (e: ChangeEvent<any>) =>
     setTimeSlot(e.target.value);
+  const handleDayChange = (e: ChangeEvent<any>) => setDay(e.target.value);
 
   return (
     <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
@@ -31,7 +31,7 @@ export const Main: FC<{ numberDay: number }> = ({ numberDay }) => {
         <Text fontSize="xs">
           Free room data for{" "}
           <span style={{ textDecoration: "underline" }}>
-            {new Date().toDateString()}
+            {fullDayList[day]}
           </span>
         </Text>
       </Box>
@@ -40,11 +40,13 @@ export const Main: FC<{ numberDay: number }> = ({ numberDay }) => {
         handleSearchTextChange={handleSearchTextChange}
         timeSlot={timeSlot}
         handleTimeSlotChange={handleTimeSlotChange}
+        day={day}
+        handleDayChange={handleDayChange}
       />
       <FreeRoomsCardList
         searchText={searchText}
         timeSlot={timeSlot}
-        stringDay={stringDay}
+        stringDay={day}
       />
       <Spacer />
       <Text textAlign="center" fontSize="xs" py="4">
