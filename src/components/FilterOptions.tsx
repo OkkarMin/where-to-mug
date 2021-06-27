@@ -53,7 +53,7 @@ export const FilterOptions: FC<{
           value={searchText}
           onChange={handleSearchTextChange}
           borderColor="#01A0DC"
-          placeholder="Enter room name... AMDLAB | ART-01-19"
+          placeholder="Room name... AMDLAB | ART-01-19"
           colorScheme="linkedin"
           variant="filled"
         />
