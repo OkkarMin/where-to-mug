@@ -42,7 +42,7 @@ export const FilterOptions: FC<{
   handleTimeSlotChange,
 }) => {
   return (
-    <HStack p={["4", "8"]} align="center">
+    <HStack mt="2" px={["4", "8"]} align="center">
       <VStack w="full" align="center">
         <Input
           value={searchText}
