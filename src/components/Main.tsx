@@ -30,9 +30,9 @@ export const Main: FC<{ numberDay: number }> = ({ numberDay }) => {
       <Box mt="2" ml={["4", "8"]} align="flex-start">
         <Text fontSize="xs">
           Free room data for{" "}
-          <Text display="inline" textDecoration="underline">
+          <span style={{ textDecoration: "underline" }}>
             {new Date().toDateString()}
-          </Text>
+          </span>
         </Text>
       </Box>
       <FilterOptions
