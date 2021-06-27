@@ -30,6 +30,7 @@ export const DisclaimerModel: FC<{}> = () => {
       isOpen={isOpen}
       onClose={onClose}
       scrollBehavior="inside"
+      closeOnOverlayClick={false}
     >
       <ModalOverlay />
       <ModalContent>
