@@ -10,12 +10,7 @@ import {
   MenuItem,
   VStack,
 } from "@chakra-ui/react";
-import {
-  TimeIcon,
-  ChevronDownIcon,
-  ArrowLeftIcon,
-  ArrowRightIcon,
-} from "@chakra-ui/icons";
+import { TimeIcon, ChevronDownIcon, AddIcon } from "@chakra-ui/icons";
 
 const timeSlots = [
   "All",
@@ -58,8 +53,7 @@ export const FilterOptions: FC<{
           variant="filled"
         />
       </VStack>
-      <ArrowLeftIcon />
-      <ArrowRightIcon />
+      <AddIcon />
       <VStack w="full" align="center">
         <Menu>
           <MenuButton
