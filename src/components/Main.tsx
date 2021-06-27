@@ -6,6 +6,7 @@ import { DisclaimerModel } from "./DisclaimerModel";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { FilterOptions } from "./FilterOptions";
 import ScrollArrow from "../components/autoScrollTop/ScrollArrow";
+import { useEffect } from "react";
 
 const fullDayList = {
   MON: "Monday",
@@ -15,10 +16,29 @@ const fullDayList = {
   FRI: "Friday",
 };
 
+const numberDayToStringDay = {
+  1: "MON",
+  2: "TUE",
+  3: "WED",
+  4: "THU",
+  5: "FRI",
+};
+
+const isWeekDay = (numberDay: number) => {
+  if (numberDay <= 5 && numberDay > 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+const numberDay = new Date().getDay();
+
 export const Main = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [timeSlot, setTimeSlot] = useState<string>("All");
-  const [day, setDay] = useState<string>("MON");
+  const [day, setDay] = useState<string>(
+    isWeekDay(numberDay) ? numberDayToStringDay[numberDay] : "MON"
+  );
 
   const handleSearchTextChange = (e: ChangeEvent<any>) =>
     setSearchText(e.target.value);
@@ -30,12 +50,18 @@ export const Main = () => {
     <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
       <DisclaimerModel />
       <Flex mt="2" ml={["4", "8"]} justify="space-between" align="center">
-        <Text fontSize="sm">
-          Free room data for{" "}
-          <span style={{ textDecoration: "underline" }}>
-            {fullDayList[day]}
-          </span>
-        </Text>
+        {isWeekDay(numberDay) ? (
+          <Text fontSize="sm">
+            Free room data for{" "}
+            <span style={{ textDecoration: "underline" }}>
+              {fullDayList[day]}
+            </span>
+          </Text>
+        ) : (
+          <Text fontSize="sm">
+            Its weekend. Rmb to take a break. Love you💗
+          </Text>
+        )}
         <Link href="https://maps.ntu.edu.sg/" isExternal>
           <Button
             rightIcon={<ChevronRightIcon />}
