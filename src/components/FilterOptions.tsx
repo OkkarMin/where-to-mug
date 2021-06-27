@@ -43,45 +43,40 @@ export const FilterOptions: FC<{
 }) => {
   return (
     <HStack mt="2" px={["4", "8"]} align="center">
-      <VStack w="full" align="center">
-        <Input
-          value={searchText}
-          onChange={handleSearchTextChange}
-          borderColor="#01A0DC"
-          placeholder="Room name... AMDLAB | ART-01-19"
+      <Menu>
+        <MenuButton
+          as={Button}
           colorScheme="linkedin"
-          variant="filled"
-        />
-      </VStack>
-      <AddIcon />
-      <VStack w="full" align="center">
-        <Menu>
-          <MenuButton
-            as={Button}
-            colorScheme="linkedin"
-            size="md"
-            width="full"
-            leftIcon={<TimeIcon />}
-            rightIcon={<ChevronDownIcon />}
-          >
-            {timeSlot}
-          </MenuButton>
-          <MenuList>
-            <MenuGroup title="Timeslot">
-              {timeSlots.map((slot: string, i: number) => (
-                <MenuItem
-                  value={slot}
-                  key={i}
-                  icon={<TimeIcon />}
-                  onClick={handleTimeSlotChange}
-                >
-                  {slot}
-                </MenuItem>
-              ))}
-            </MenuGroup>
-          </MenuList>
-        </Menu>
-      </VStack>
+          size="md"
+          width="full"
+          leftIcon={<TimeIcon />}
+          rightIcon={<ChevronDownIcon />}
+        >
+          {timeSlot}
+        </MenuButton>
+        <MenuList>
+          <MenuGroup title="Timeslot">
+            {timeSlots.map((slot: string, i: number) => (
+              <MenuItem
+                value={slot}
+                key={i}
+                icon={<TimeIcon />}
+                onClick={handleTimeSlotChange}
+              >
+                {slot}
+              </MenuItem>
+            ))}
+          </MenuGroup>
+        </MenuList>
+      </Menu>
+      <Input
+        value={searchText}
+        onChange={handleSearchTextChange}
+        borderColor="#01A0DC"
+        placeholder="Room name... AMDLAB | ART-01-19"
+        colorScheme="linkedin"
+        variant="filled"
+      />
     </HStack>
   );
 };
