@@ -24,6 +24,7 @@ const numberDayToStringDay = {
 const isWeekDay = (numberDay: number) => numberDay <= 5;
 
 // const numberDay = new Date().getDay();
+// !!! Remove this hardcoded line in production
 const numberDay = 5;
 
 let stringDay: string, rooms: any[];
