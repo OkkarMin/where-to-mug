@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
-import { Circle, Flex, Spacer, Text, Link, Box } from "@chakra-ui/react";
+import { Circle } from "@chakra-ui/react";
 
 const ScrollArrow = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -25,15 +25,11 @@ const ScrollArrow = () => {
     <Circle
       className="scrollTop"
       style={{ display: showScroll ? "flex" : "none" }}
-      //size="128px"
       backgroundColor="#ffff"
     >
       <FaArrowCircleUp
-        //className="scrollTop"
         onClick={scrollTop}
         style={{
-          //height: 40,
-          //display: showScroll ? "flex" : "none",
           fontSize: "50px",
           color: "#48cae4",
         }}
