@@ -1,4 +1,4 @@
-import { WeekendMessage } from "./components/WeekendMessage";
+import { WeekendMessage } from "../components/WeekendMessage";
 import { Main } from "../components/Main";
 
 const isWeekDay = (numberDay: number) => numberDay <= 5;
