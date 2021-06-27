@@ -1,6 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
-import { Box, Flex, Text, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Spacer, Text } from "@chakra-ui/react";
 
+import { DisclaimerModel } from "./DisclaimerModel";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { FilterOptions } from "./FilterOptions";
 
@@ -25,6 +26,7 @@ export const Main: FC<{ numberDay: number }> = ({ numberDay }) => {
 
   return (
     <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
+      <DisclaimerModel />
       <Box mt="2" ml={["4", "8"]} align="flex-start">
         <Text fontSize="xs">
           Free room data for{" "}

@@ -7,7 +7,7 @@ export interface IFreeRoomCard {
   room: string;
 }
 
-const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
+export const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
   slot,
   isFree,
 }) => {
