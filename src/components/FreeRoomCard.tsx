@@ -31,7 +31,7 @@ const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
 export const FreeRoomCard: FC<IFreeRoomCard> = ({ timeSlots, room }) => {
   return (
     <Box
-      w="full"
+      w="xs"
       mx="auto"
       mb="4"
       p="4"

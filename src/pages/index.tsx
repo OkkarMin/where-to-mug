@@ -51,7 +51,7 @@ const Index = () => {
         searchText={searchText}
         handleSearchTextChange={handleSearchTextChange}
       />
-      <SimpleGrid minChildWidth="300px" spacingX="4" mt="1" px={["4", "8"]}>
+      <SimpleGrid minChildWidth="340px" spacing="4" mt="1" px={["4", "8"]}>
         {rooms
           .filter((room: string) => room.includes(searchText.toUpperCase()))
           .map((room: string, i: number) => (
