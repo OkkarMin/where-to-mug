@@ -24,14 +24,7 @@ export const Main: FC<{ numberDay: number }> = ({ numberDay }) => {
     setTimeSlot(e.target.value);
 
   return (
-    <Flex
-      direction="column"
-      w="full"
-      h="auto"
-      minH="100vh"
-      bg="gray.100"
-      mb="-4"
-    >
+    <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
       <FilterOptions
         searchText={searchText}
         handleSearchTextChange={handleSearchTextChange}
