@@ -1,9 +1,11 @@
 import { ChangeEvent, FC, useState } from "react";
-import { Box, Flex, Spacer, Text } from "@chakra-ui/react";
+import { Button, Flex, Spacer, Text, Link, Box } from "@chakra-ui/react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 
 import { DisclaimerModel } from "./DisclaimerModel";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { FilterOptions } from "./FilterOptions";
+import ScrollArrow from "../components/autoScrollTop/ScrollArrow";
 
 const fullDayList = {
   MON: "Monday",
@@ -27,14 +29,24 @@ export const Main = () => {
   return (
     <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
       <DisclaimerModel />
-      <Box mt="2" ml={["4", "8"]} align="flex-start">
-        <Text fontSize="xs">
+      <Flex mt="2" ml={["4", "8"]} justify="space-between" align="center">
+        <Text fontSize="sm">
           Free room data for{" "}
           <span style={{ textDecoration: "underline" }}>
             {fullDayList[day]}
           </span>
         </Text>
-      </Box>
+        <Link href="https://maps.ntu.edu.sg/" isExternal>
+          <Button
+            rightIcon={<ChevronRightIcon />}
+            fontSize="sm"
+            textDecoration="underline"
+            marginRight={["", "10"]}
+          >
+            To NTU Map
+          </Button>
+        </Link>
+      </Flex>
       <FilterOptions
         searchText={searchText}
         handleSearchTextChange={handleSearchTextChange}
@@ -48,6 +60,10 @@ export const Main = () => {
         timeSlot={timeSlot}
         stringDay={day}
       />
+      <Box position="fixed" bottom={["3", "5"]} right={["3", "5"]}>
+        <ScrollArrow />
+      </Box>
+
       <Spacer />
       <Text textAlign="center" fontSize="xs" py="4">
         2021 © Okkar
