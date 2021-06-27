@@ -8,10 +8,14 @@ import {
   MenuList,
   MenuGroup,
   MenuItem,
-  Text,
   VStack,
 } from "@chakra-ui/react";
-import { TimeIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import {
+  TimeIcon,
+  ChevronDownIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+} from "@chakra-ui/icons";
 
 const timeSlots = [
   "All",
@@ -43,23 +47,20 @@ export const FilterOptions: FC<{
   handleTimeSlotChange,
 }) => {
   return (
-    <HStack p={["4", "8"]} align="flex-end">
+    <HStack p={["4", "8"]} align="center">
       <VStack w="full" align="center">
-        <Text>Enter room</Text>
         <Input
           value={searchText}
           onChange={handleSearchTextChange}
           borderColor="#01A0DC"
-          placeholder="TR+13"
+          placeholder="Enter room name... AMDLAB | ART-01-19"
           colorScheme="linkedin"
           variant="filled"
         />
       </VStack>
-
-      <Text>or...</Text>
-
+      <ArrowLeftIcon />
+      <ArrowRightIcon />
       <VStack w="full" align="center">
-        <Text>Select timeslot</Text>
         <Menu>
           <MenuButton
             as={Button}
