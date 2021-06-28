@@ -54,7 +54,7 @@ export const FilterOptions: FC<{
           as={Button}
           colorScheme="linkedin"
           size="md"
-          width={["full", "20vw"]}
+          width={["full", "25vw"]}
           leftIcon={<CalendarIcon />}
           rightIcon={<ChevronDownIcon />}
           margin="5px"
@@ -81,7 +81,7 @@ export const FilterOptions: FC<{
           as={Button}
           colorScheme="linkedin"
           size="md"
-          width={["full", "20vw"]}
+          width={["full", "25vw"]}
           leftIcon={<TimeIcon />}
           rightIcon={<ChevronDownIcon />}
           margin="5px"
@@ -111,6 +111,7 @@ export const FilterOptions: FC<{
         colorScheme="linkedin"
         variant="filled"
         margin="5px"
+        width="full"
       />
     </Flex>
   );
