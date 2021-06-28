@@ -1,12 +1,12 @@
 import { ChangeEvent, FC, useState } from "react";
+
 import { Button, Flex, Spacer, Text, Link, Box } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 import { DisclaimerModel } from "./DisclaimerModel";
-import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { FilterOptions } from "./FilterOptions";
-import ScrollArrow from "../components/autoScrollTop/ScrollArrow";
-import { useEffect } from "react";
+import { FreeRoomsCardList } from "./FreeRoomsCardList";
+import { ScrollArrow } from "./autoScrollTop/ScrollArrow";
 
 const fullDayList = {
   MON: "Monday",
@@ -33,7 +33,7 @@ const isWeekDay = (numberDay: number) => {
 };
 const numberDay = new Date().getDay();
 
-export const Main = () => {
+export const Main: FC<{}> = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [timeSlot, setTimeSlot] = useState<string>("All");
   const [day, setDay] = useState<string>(
