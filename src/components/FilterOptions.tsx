@@ -1,4 +1,5 @@
 import { FC, ChangeEventHandler, MouseEventHandler } from "react";
+
 import {
   Button,
   Flex,
@@ -8,7 +9,6 @@ import {
   MenuList,
   MenuGroup,
   MenuItem,
-  VStack,
 } from "@chakra-ui/react";
 import { TimeIcon, ChevronDownIcon, CalendarIcon } from "@chakra-ui/icons";
 
@@ -106,7 +106,7 @@ export const FilterOptions: FC<{
       <Input
         value={searchText}
         onChange={handleSearchTextChange}
-        borderColor="#01A0DC"
+        borderColor="linkedinBlue"
         placeholder="Room name... AMDLAB | ART-01-19"
         colorScheme="linkedin"
         variant="filled"
