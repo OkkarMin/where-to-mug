@@ -48,7 +48,7 @@ export const FilterOptions: FC<{
   handleDayChange,
 }) => {
   return (
-    <Flex direction={["Column", "Row"]} mt="2" px={["4", "8"]} align="center">
+    <Flex direction={["column", "row"]} mt="2" px={["4", "8"]} align="center">
       <Menu>
         <MenuButton
           as={Button}
