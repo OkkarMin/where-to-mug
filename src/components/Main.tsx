@@ -6,7 +6,7 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import { DisclaimerModel } from "./DisclaimerModel";
 import { FilterOptions } from "./FilterOptions";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
-import { ScrollArrow } from "./autoScrollTop/ScrollArrow";
+import { ScrollToTop } from "./autoScrollTop/ScrollToTop";
 
 const shortDayToFullDay = {
   MON: "Monday",
@@ -81,7 +81,7 @@ export const Main: FC<{}> = () => {
         stringDay={day}
       />
       <Box position="fixed" bottom={["3", "5"]} right={["3", "5"]}>
-        <ScrollArrow />
+        <ScrollToTop />
       </Box>
 
       <Spacer />

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Circle } from "@chakra-ui/react";
 import { FaArrowCircleUp } from "react-icons/fa";
 
-export const ScrollArrow = () => {
+export const ScrollToTop = () => {
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {
