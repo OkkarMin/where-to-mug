@@ -27,8 +27,9 @@ export const ScrollArrow = () => {
     <Circle
       as="button"
       className="scrollTop"
-      style={{ display: showScroll ? "flex" : "none" }}
       backgroundColor="white"
+      style={{ display: showScroll ? "flex" : "none" }}
+      _hover={{ shadow: "xl" }}
     >
       {/* need to find out why color='linkedinBlue' not working */}
       <FaArrowCircleUp onClick={scrollTop} size="50px" color="#01A0DC" />
