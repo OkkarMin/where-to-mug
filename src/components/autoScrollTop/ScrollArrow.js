@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { FaArrowCircleUp } from "react-icons/fa";
-import { Circle } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 
-const ScrollArrow = () => {
+import { Circle } from "@chakra-ui/react";
+import { FaArrowCircleUp } from "react-icons/fa";
+
+export const ScrollArrow = () => {
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {
@@ -23,19 +24,13 @@ const ScrollArrow = () => {
 
   return (
     <Circle
+      as="button"
       className="scrollTop"
       style={{ display: showScroll ? "flex" : "none" }}
-      backgroundColor="#ffff"
+      backgroundColor="white"
     >
-      <FaArrowCircleUp
-        onClick={scrollTop}
-        style={{
-          fontSize: "50px",
-          color: "#48cae4",
-        }}
-      />
+      {/* need to find out why color='linkedinBlue' not working */}
+      <FaArrowCircleUp onClick={scrollTop} size="50px" color="#01A0DC" />
     </Circle>
   );
 };
-
-export default ScrollArrow;
