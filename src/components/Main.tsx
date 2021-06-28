@@ -24,13 +24,7 @@ const numberDayToStringDay = {
   5: "FRI",
 };
 
-const isWeekDay = (numberDay: number) => {
-  if (numberDay <= 5 && numberDay > 0) {
-    return true;
-  } else {
-    return false;
-  }
-};
+const isWeekDay = (numberDay: number) => 1 <= numberDay && numberDay <= 5;
 const numberDay = new Date().getDay();
 
 export const Main: FC<{}> = () => {
