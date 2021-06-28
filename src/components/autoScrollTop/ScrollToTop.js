@@ -28,7 +28,7 @@ export const ScrollToTop = () => {
   }, [showScroll]);
 
   return (
-    <MotionBox whileHover={{ scale: 1.5 }}>
+    <MotionBox whileHover={{ scale: 1.15 }}>
       <Circle
         as="button"
         className="scrollTop"
