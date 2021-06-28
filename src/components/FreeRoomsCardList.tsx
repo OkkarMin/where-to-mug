@@ -4,7 +4,7 @@ import { SimpleGrid } from "@chakra-ui/layout";
 
 import { FreeRoomCard } from "./FreeRoomCard";
 
-import room_occupancy from "../../room_occupancy.json";
+import room_occupancy from "../../data/room_occupancy.json";
 
 export const FreeRoomsCardList: FC<{
   searchText: string;
