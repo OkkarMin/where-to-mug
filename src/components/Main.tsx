@@ -8,7 +8,7 @@ import { FilterOptions } from "./FilterOptions";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { ScrollArrow } from "./autoScrollTop/ScrollArrow";
 
-const fullDayList = {
+const shortDayToFullDay = {
   MON: "Monday",
   TUE: "Tuesday",
   WED: "Wednesday",
@@ -48,7 +48,7 @@ export const Main: FC<{}> = () => {
           <Text fontSize="sm">
             Free room data for{" "}
             <span style={{ textDecoration: "underline" }}>
-              {fullDayList[day]}
+              {shortDayToFullDay[day]}
             </span>
           </Text>
         ) : (
