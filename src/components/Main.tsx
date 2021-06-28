@@ -30,7 +30,7 @@ const numberDay = new Date().getDay();
 export const Main: FC<{}> = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [timeSlot, setTimeSlot] = useState<string>("All");
-  const [day, setDay] = useState<string>(
+  const [currentDay, setCurrentDay] = useState<string>(
     isWeekDay(numberDay) ? numberDayToStringDay[numberDay] : "MON"
   );
 
@@ -38,7 +38,8 @@ export const Main: FC<{}> = () => {
     setSearchText(e.target.value);
   const handleTimeSlotChange = (e: ChangeEvent<any>) =>
     setTimeSlot(e.target.value);
-  const handleDayChange = (e: ChangeEvent<any>) => setDay(e.target.value);
+  const handleDayChange = (e: ChangeEvent<any>) =>
+    setCurrentDay(e.target.value);
 
   return (
     <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
@@ -48,7 +49,7 @@ export const Main: FC<{}> = () => {
           <Text fontSize="sm">
             Free room data for{" "}
             <span style={{ textDecoration: "underline" }}>
-              {shortDayToFullDay[day]}
+              {shortDayToFullDay[currentDay]}
             </span>
           </Text>
         ) : (
@@ -72,19 +73,20 @@ export const Main: FC<{}> = () => {
         handleSearchTextChange={handleSearchTextChange}
         timeSlot={timeSlot}
         handleTimeSlotChange={handleTimeSlotChange}
-        day={day}
+        currentDay={currentDay}
         handleDayChange={handleDayChange}
       />
       <FreeRoomsCardList
         searchText={searchText}
         timeSlot={timeSlot}
-        stringDay={day}
+        stringDay={currentDay}
       />
       <Box position="fixed" bottom={["3", "5"]} right={["3", "5"]}>
         <ScrollToTop />
       </Box>
 
       <Spacer />
+
       <Text textAlign="center" fontSize="xs" py="4">
         2021 © Okkar
       </Text>
