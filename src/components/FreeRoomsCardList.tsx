@@ -1,4 +1,5 @@
 import { FC } from "react";
+
 import { SimpleGrid } from "@chakra-ui/layout";
 
 import { FreeRoomCard } from "./FreeRoomCard";
