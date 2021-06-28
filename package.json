@@ -12,6 +12,7 @@
     "@chakra-ui/theme-tools": "1.1.2",
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.1.5",
+    "@sentry/nextjs": "^6.8.0",
     "framer-motion": "^4.0.3",
     "lodash": "^4.17.21",
     "next": "11.0.0",
