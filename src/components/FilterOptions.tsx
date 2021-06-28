@@ -37,14 +37,14 @@ export const FilterOptions: FC<{
   handleSearchTextChange: ChangeEventHandler;
   timeSlot: string;
   handleTimeSlotChange: MouseEventHandler;
-  day: string;
+  currentDay: string;
   handleDayChange: MouseEventHandler;
 }> = ({
   searchText,
   handleSearchTextChange,
   timeSlot,
   handleTimeSlotChange,
-  day,
+  currentDay,
   handleDayChange,
 }) => {
   return (
@@ -59,18 +59,18 @@ export const FilterOptions: FC<{
           rightIcon={<ChevronDownIcon />}
           margin="5px"
         >
-          {day}
+          {currentDay}
         </MenuButton>
         <MenuList>
           <MenuGroup title="Day">
-            {dayList.map((days: string, i: number) => (
+            {dayList.map((selectedDay: string, i: number) => (
               <MenuItem
-                value={days}
+                value={selectedDay}
                 key={i}
                 icon={<CalendarIcon />}
                 onClick={handleDayChange}
               >
-                {days}
+                {selectedDay}
               </MenuItem>
             ))}
           </MenuGroup>
