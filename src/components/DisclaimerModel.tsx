@@ -29,7 +29,6 @@ export const DisclaimerModel: FC<{}> = () => {
       initialFocusRef={btnRef}
       isOpen={isOpen}
       onClose={onClose}
-      scrollBehavior="inside"
       closeOnOverlayClick={false}
     >
       <ModalOverlay />
