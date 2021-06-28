@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useState, useEffect } from "react";
 
 import { Button, Flex, Spacer, Text, Link, Box } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -30,9 +30,13 @@ const numberDay = new Date().getDay();
 export const Main: FC<{}> = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [timeSlot, setTimeSlot] = useState<string>("All");
-  const [currentDay, setCurrentDay] = useState<string>(
-    isWeekDay(numberDay) ? numberDayToStringDay[numberDay] : "MON"
-  );
+  const [currentDay, setCurrentDay] = useState<string>("MON");
+
+  useEffect(() => {
+    if (isWeekDay(numberDay)) {
+      setCurrentDay(numberDayToStringDay[numberDay]);
+    }
+  }, []);
 
   const handleSearchTextChange = (e: ChangeEvent<any>) =>
     setSearchText(e.target.value);
