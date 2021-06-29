@@ -141,7 +141,7 @@ const Feedback = () => {
                         isInvalid={form.errors.name && form.touched.name}
                       >
                         <FormLabel marginTop="2" htmlFor="name">
-                          First name
+                          Name
                         </FormLabel>
                         <Input {...field} id="name" placeholder="name" />
                         <FormErrorMessage>{form.errors.name}</FormErrorMessage>
