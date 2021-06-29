@@ -57,9 +57,6 @@
     "location": "NIE2-TR204"
   },
   {
-    "location": "TBC"
-  },
-  {
     "location": "NIE2-TR208"
   },
   {
@@ -82,9 +79,6 @@
   },
   {
     "location": "BIE-TR+1"
-  },
-  {
-    "location": "Online"
   },
   {
     "location": "CBE-SR2"
@@ -135,9 +129,6 @@
     "location": "SBS-CR4"
   },
   {
-    "location": "ONLINE"
-  },
-  {
     "location": "LHS-TR+52"
   },
   {
@@ -151,9 +142,6 @@
   },
   {
     "location": "SBS-CR3"
-  },
-  {
-    "location": ""
   },
   {
     "location": "SBS-B1N-12"
@@ -615,7 +603,7 @@
     "location": "CSKL17"
   },
   {
-    "location": "\tTR+112"
+    "location": "TR+112"
   },
   {
     "location": "LHS-TR+4"
@@ -711,7 +699,7 @@
     "location": "TR+1"
   },
   {
-    "location": "LHS-TR+28\t"
+    "location": "LHS-TR+28"
   },
   {
     "location": "LHS-TR+8"
