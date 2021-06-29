@@ -33,7 +33,7 @@ export const Feedback = () => {
   function validateMsg(value) {
     let error;
     if (!value) {
-      error = "Message is required";
+      error = "Description is required";
     }
     return error;
   }
