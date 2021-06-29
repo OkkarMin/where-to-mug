@@ -1,12 +1,13 @@
-import { ChangeEvent, FC, useState, useEffect } from "react";
+import { ChangeEvent, FC, useState } from "react";
 
-import { Button, Flex, Spacer, Text, Link, Box } from "@chakra-ui/react";
+import { Button, Flex, Spacer, Text, Link, VStack } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 import { DisclaimerModel } from "./DisclaimerModel";
 import { FilterOptions } from "./FilterOptions";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { ScrollToTop } from "./autoScrollTop/ScrollToTop";
+import Feedback from "../components/Feedback";
 
 const shortDayToFullDay = {
   MON: "Monday",
@@ -83,9 +84,15 @@ export const Main: FC<{}> = () => {
         timeSlot={timeSlot}
         stringDay={currentDay}
       />
-      <Box position="fixed" bottom={["3", "5"]} right={["3", "5"]}>
+      <VStack
+        direction="column"
+        position="fixed"
+        bottom={["3", "5"]}
+        right={["3", "5"]}
+      >
+        <Feedback />
         <ScrollToTop />
-      </Box>
+      </VStack>
 
       <Spacer />
 
