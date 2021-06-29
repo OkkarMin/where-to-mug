@@ -1,0 +1,941 @@
+[
+  {
+    "location": "NIE3-02-26"
+  },
+  {
+    "location": "NIE3-02-24"
+  },
+  {
+    "location": "NIE5-1-504"
+  },
+  {
+    "location": "TR+30"
+  },
+  {
+    "location": "TR+29"
+  },
+  {
+    "location": "TR+31"
+  },
+  {
+    "location": "TR+108"
+  },
+  {
+    "location": "TR+110"
+  },
+  {
+    "location": "NIE7-TR714"
+  },
+  {
+    "location": "NIE3-TR305"
+  },
+  {
+    "location": "NIE3-TR304"
+  },
+  {
+    "location": "NIE3-TR306"
+  },
+  {
+    "location": "NIE2-02-05"
+  },
+  {
+    "location": "NIE2-02-07"
+  },
+  {
+    "location": "NIE2-TR203"
+  },
+  {
+    "location": "NIE2-TR210"
+  },
+  {
+    "location": "NIE2-TR206"
+  },
+  {
+    "location": "NIE2-TR201"
+  },
+  {
+    "location": "NIE2-TR204"
+  },
+  {
+    "location": "TBC"
+  },
+  {
+    "location": "NIE2-TR208"
+  },
+  {
+    "location": "NIE2-TR207"
+  },
+  {
+    "location": "NIE2-TR211"
+  },
+  {
+    "location": "LHN-TR+01"
+  },
+  {
+    "location": "NIE7-01-06"
+  },
+  {
+    "location": "NIE2-01-02"
+  },
+  {
+    "location": "CBE-LT"
+  },
+  {
+    "location": "BIE-TR+1"
+  },
+  {
+    "location": "Online"
+  },
+  {
+    "location": "CBE-SR2"
+  },
+  {
+    "location": "LT12"
+  },
+  {
+    "location": "LT15"
+  },
+  {
+    "location": "CBE-SR3"
+  },
+  {
+    "location": "LHN-TR+37"
+  },
+  {
+    "location": "LHN-TR+52"
+  },
+  {
+    "location": "LHN-TR+14"
+  },
+  {
+    "location": "LHN-TR+15"
+  },
+  {
+    "location": "LHN-TR+30"
+  },
+  {
+    "location": "SBS-B1N-18"
+  },
+  {
+    "location": "LT1"
+  },
+  {
+    "location": "LHN-TR+05"
+  },
+  {
+    "location": "LHN-TR+06"
+  },
+  {
+    "location": "SBS-TR+5"
+  },
+  {
+    "location": "LT20"
+  },
+  {
+    "location": "SBS-CR4"
+  },
+  {
+    "location": "ONLINE"
+  },
+  {
+    "location": "LHS-TR+52"
+  },
+  {
+    "location": "LHS-TR+53"
+  },
+  {
+    "location": "SBS-CR2"
+  },
+  {
+    "location": "TR102"
+  },
+  {
+    "location": "SBS-CR3"
+  },
+  {
+    "location": ""
+  },
+  {
+    "location": "SBS-B1N-12"
+  },
+  {
+    "location": "SBS-CR1"
+  },
+  {
+    "location": "SBS-TR+6"
+  },
+  {
+    "location": "LHN-TR+22"
+  },
+  {
+    "location": "LHN-TR+23"
+  },
+  {
+    "location": "LHN-TR+24"
+  },
+  {
+    "location": "LHN-TR+25"
+  },
+  {
+    "location": "LHN-TR+26"
+  },
+  {
+    "location": "LHN-TR+27"
+  },
+  {
+    "location": "LHN-TR+28"
+  },
+  {
+    "location": "LHN-TR+29"
+  },
+  {
+    "location": "LHN-TR+19"
+  },
+  {
+    "location": "LHN-TR+20"
+  },
+  {
+    "location": "LHN-TR+21"
+  },
+  {
+    "location": "LHN-TR+36"
+  },
+  {
+    "location": "LHN-TR+10"
+  },
+  {
+    "location": "LHN-TR+11"
+  },
+  {
+    "location": "LHN-TR+04"
+  },
+  {
+    "location": "LHN-TR+12"
+  },
+  {
+    "location": "LHN-TR+09"
+  },
+  {
+    "location": "TR+18"
+  },
+  {
+    "location": "TR+4"
+  },
+  {
+    "location": "TR+15"
+  },
+  {
+    "location": "TR+8"
+  },
+  {
+    "location": "TR+7"
+  },
+  {
+    "location": "TR+5"
+  },
+  {
+    "location": "TR+17"
+  },
+  {
+    "location": "TR+37"
+  },
+  {
+    "location": "TR+9"
+  },
+  {
+    "location": "TR+16"
+  },
+  {
+    "location": "TR+33"
+  },
+  {
+    "location": "TR+19"
+  },
+  {
+    "location": "LHN-TR+17"
+  },
+  {
+    "location": "TRX44"
+  },
+  {
+    "location": "LHN-TR+18"
+  },
+  {
+    "location": "TR+21"
+  },
+  {
+    "location": "TR+20"
+  },
+  {
+    "location": "LT11"
+  },
+  {
+    "location": "LT8"
+  },
+  {
+    "location": "CBE-CL2"
+  },
+  {
+    "location": "BIE-CL2"
+  },
+  {
+    "location": "SMARTCLASS"
+  },
+  {
+    "location": "N2-B4A-02"
+  },
+  {
+    "location": "SPMS-TR+4"
+  },
+  {
+    "location": "SPMS-TR+15"
+  },
+  {
+    "location": "SPMS-TR+12"
+  },
+  {
+    "location": "SPMS-TR+7"
+  },
+  {
+    "location": "LHS-TR+47"
+  },
+  {
+    "location": "LHS-TR+56"
+  },
+  {
+    "location": "LHS-TR+49"
+  },
+  {
+    "location": "SPMS-TR+6"
+  },
+  {
+    "location": "SPMS-TR+17"
+  },
+  {
+    "location": "SPMS-LT2"
+  },
+  {
+    "location": "SCI-SR1"
+  },
+  {
+    "location": "SCI-TSN"
+  },
+  {
+    "location": "SCI-TTM"
+  },
+  {
+    "location": "SCI-MMC"
+  },
+  {
+    "location": "SCI-EXSR"
+  },
+  {
+    "location": "CS-TR+9"
+  },
+  {
+    "location": "CS-TR+8"
+  },
+  {
+    "location": "SCI-MAC"
+  },
+  {
+    "location": "S2_2-B4-04"
+  },
+  {
+    "location": "SCI-SR2"
+  },
+  {
+    "location": "LRG TV STU"
+  },
+  {
+    "location": "LF-LT"
+  },
+  {
+    "location": "TR+36"
+  },
+  {
+    "location": "TR+35"
+  },
+  {
+    "location": "TR+3"
+  },
+  {
+    "location": "LHN-TR+07"
+  },
+  {
+    "location": "TRX43"
+  },
+  {
+    "location": "TR+34"
+  },
+  {
+    "location": "LHN-TR+31"
+  },
+  {
+    "location": "LT7"
+  },
+  {
+    "location": "LT16"
+  },
+  {
+    "location": "LT18"
+  },
+  {
+    "location": "LHN-TR+08"
+  },
+  {
+    "location": "LHN-TR+13"
+  },
+  {
+    "location": "LHN-TR+16"
+  },
+  {
+    "location": "TR+2"
+  },
+  {
+    "location": "AMDLAB"
+  },
+  {
+    "location": "TR+23"
+  },
+  {
+    "location": "TR+22"
+  },
+  {
+    "location": "ART-02-28"
+  },
+  {
+    "location": "ART-02-29"
+  },
+  {
+    "location": "S2.2-B4-04"
+  },
+  {
+    "location": "ART-B1-14"
+  },
+  {
+    "location": "ART-B1-5G"
+  },
+  {
+    "location": "DRAGONKILN"
+  },
+  {
+    "location": "ART-B1-02A"
+  },
+  {
+    "location": "ART-02-23B"
+  },
+  {
+    "location": "ART-01-19"
+  },
+  {
+    "location": "ART-B1-17A"
+  },
+  {
+    "location": "ART-01-12"
+  },
+  {
+    "location": "ART-B1-13"
+  },
+  {
+    "location": "ART-01-11A"
+  },
+  {
+    "location": "ART-02-17"
+  },
+  {
+    "location": "ART-02-20"
+  },
+  {
+    "location": "ART-B1-21"
+  },
+  {
+    "location": "ART-02-23A"
+  },
+  {
+    "location": "ART-02-30"
+  },
+  {
+    "location": "ART-02-26"
+  },
+  {
+    "location": "ART-02-24B"
+  },
+  {
+    "location": "ART-B1-23"
+  },
+  {
+    "location": "ART-B1-25"
+  },
+  {
+    "location": "ART-B1-4A"
+  },
+  {
+    "location": "ART-B1-5F"
+  },
+  {
+    "location": "ART-B1-5A"
+  },
+  {
+    "location": "LHN TR+03"
+  },
+  {
+    "location": "ART-B1-5E"
+  },
+  {
+    "location": "ART-01-02"
+  },
+  {
+    "location": "ART-02-02A"
+  },
+  {
+    "location": "ART-02-02B"
+  },
+  {
+    "location": "TR+69"
+  },
+  {
+    "location": "TR+63"
+  },
+  {
+    "location": "S2-B3B-08"
+  },
+  {
+    "location": "TR+65"
+  },
+  {
+    "location": "TR+78"
+  },
+  {
+    "location": "TR+90"
+  },
+  {
+    "location": "TR+88"
+  },
+  {
+    "location": "TR+62"
+  },
+  {
+    "location": "TR+61"
+  },
+  {
+    "location": "TR+77"
+  },
+  {
+    "location": "TR+66"
+  },
+  {
+    "location": "TR+94"
+  },
+  {
+    "location": "TR+96"
+  },
+  {
+    "location": "TR+64"
+  },
+  {
+    "location": "TR+95"
+  },
+  {
+    "location": "TR+92"
+  },
+  {
+    "location": "TR+93"
+  },
+  {
+    "location": "LT22"
+  },
+  {
+    "location": "TR+68"
+  },
+  {
+    "location": "TR+91"
+  },
+  {
+    "location": "TR+89"
+  },
+  {
+    "location": "TR103"
+  },
+  {
+    "location": "TR120"
+  },
+  {
+    "location": "TR121"
+  },
+  {
+    "location": "LHS-TR+24"
+  },
+  {
+    "location": "LT10"
+  },
+  {
+    "location": "LHN-TR+34"
+  },
+  {
+    "location": "LHN-TR+32"
+  },
+  {
+    "location": "LHN-TR+33"
+  },
+  {
+    "location": "N1.1-B2-1B"
+  },
+  {
+    "location": "N1.1-B2-1C"
+  },
+  {
+    "location": "N1.1-B2-1E"
+  },
+  {
+    "location": "HSSSEMRM7"
+  },
+  {
+    "location": "HSS-TR+2"
+  },
+  {
+    "location": "HSS-TR+1"
+  },
+  {
+    "location": "TR+80"
+  },
+  {
+    "location": "LHS-TR+41"
+  },
+  {
+    "location": "LHS-TR+42"
+  },
+  {
+    "location": "LHS-TR+51"
+  },
+  {
+    "location": "LHS-TR+43"
+  },
+  {
+    "location": "CSKL17"
+  },
+  {
+    "location": "\tTR+112"
+  },
+  {
+    "location": "LHS-TR+4"
+  },
+  {
+    "location": "LHS-TR+7"
+  },
+  {
+    "location": "LHS-TR+27"
+  },
+  {
+    "location": "LHS-TR+36"
+  },
+  {
+    "location": "HSSCOMLAB5"
+  },
+  {
+    "location": "LHS-TR+48"
+  },
+  {
+    "location": "TR+107"
+  },
+  {
+    "location": "TR+154"
+  },
+  {
+    "location": "LHS-TR+15"
+  },
+  {
+    "location": "LHS-TR+16"
+  },
+  {
+    "location": "TR+159"
+  },
+  {
+    "location": "TR+153"
+  },
+  {
+    "location": "LHS-TR+50"
+  },
+  {
+    "location": "LHS-TR+30"
+  },
+  {
+    "location": "LHS-TR+33"
+  },
+  {
+    "location": "TR+87"
+  },
+  {
+    "location": "TR+67"
+  },
+  {
+    "location": "LHS-TR+29"
+  },
+  {
+    "location": "LHS-TR+28"
+  },
+  {
+    "location": "LT14"
+  },
+  {
+    "location": "LHS-TR+46"
+  },
+  {
+    "location": "LHS-TR+20"
+  },
+  {
+    "location": "LHS-TR+17"
+  },
+  {
+    "location": "LHS-TR+10"
+  },
+  {
+    "location": "HSS-TR+5"
+  },
+  {
+    "location": "HSSCOMLAB6"
+  },
+  {
+    "location": "CSKL7"
+  },
+  {
+    "location": "CSKL8"
+  },
+  {
+    "location": "CSKL6"
+  },
+  {
+    "location": "CSKL9"
+  },
+  {
+    "location": "TR+1"
+  },
+  {
+    "location": "LHS-TR+28\t"
+  },
+  {
+    "location": "LHS-TR+8"
+  },
+  {
+    "location": "LHS-TR+9"
+  },
+  {
+    "location": "HSSSEMRM8"
+  },
+  {
+    "location": "LHS-TR+2"
+  },
+  {
+    "location": "LHS-TR+18"
+  },
+  {
+    "location": "CSKL11"
+  },
+  {
+    "location": "HSS-TR+ 5"
+  },
+  {
+    "location": "CSKL10A"
+  },
+  {
+    "location": "SEE LG9004"
+  },
+  {
+    "location": "LHS-TR+3"
+  },
+  {
+    "location": "HSSSSEMRM6"
+  },
+  {
+    "location": "HSSSSEMRM7"
+  },
+  {
+    "location": "LHS-TR+21"
+  },
+  {
+    "location": "LHS-TR+26"
+  },
+  {
+    "location": "CSKL12"
+  },
+  {
+    "location": "LHS-TR+22"
+  },
+  {
+    "location": "CSKL15"
+  },
+  {
+    "location": "TR+160"
+  },
+  {
+    "location": "TR+165"
+  },
+  {
+    "location": "TR+166"
+  },
+  {
+    "location": "LHS-TR+45"
+  },
+  {
+    "location": "HSSSEMRM4"
+  },
+  {
+    "location": "HSSSEMRM3"
+  },
+  {
+    "location": "CSKL10B"
+  },
+  {
+    "location": "CSKL16"
+  },
+  {
+    "location": "LHS-TR+14"
+  },
+  {
+    "location": "LHS-TR+ 36"
+  },
+  {
+    "location": "LHS-TR+ 14"
+  },
+  {
+    "location": "LHS-TR+5"
+  },
+  {
+    "location": "N3.2-01-34"
+  },
+  {
+    "location": "LHN-TR+03"
+  },
+  {
+    "location": "LHN-TR+02"
+  },
+  {
+    "location": "N3.2-B1-02"
+  },
+  {
+    "location": "CAE 2 LAB"
+  },
+  {
+    "location": "N3.2-B1-03"
+  },
+  {
+    "location": "N3-B3B-05"
+  },
+  {
+    "location": "SPMS-TR+5"
+  },
+  {
+    "location": "SPMS-TR+8"
+  },
+  {
+    "location": "SPMS-TR+3"
+  },
+  {
+    "location": "SPMS-TR+9"
+  },
+  {
+    "location": "SPMS-TR+10"
+  },
+  {
+    "location": "SPMS-TR+11"
+  },
+  {
+    "location": "SPMS-TR+13"
+  },
+  {
+    "location": "TR+114"
+  },
+  {
+    "location": "TR+106"
+  },
+  {
+    "location": "TR+109"
+  },
+  {
+    "location": "TR+112"
+  },
+  {
+    "location": "TR+113"
+  },
+  {
+    "location": "TR+111"
+  },
+  {
+    "location": "SPMS-LT4"
+  },
+  {
+    "location": "SPMS-LT5"
+  },
+  {
+    "location": "SPMS-LT1"
+  },
+  {
+    "location": "MAS EC RM1"
+  },
+  {
+    "location": "SPMS-LT3"
+  },
+  {
+    "location": "ESTUDIO"
+  },
+  {
+    "location": "LHN-TR+39"
+  },
+  {
+    "location": "LT4"
+  },
+  {
+    "location": "LAB ROOM"
+  },
+  {
+    "location": "MAS RC RM1"
+  },
+  {
+    "location": "COMP LAB 1"
+  },
+  {
+    "location": "COMP LAB 3"
+  },
+  {
+    "location": "NH SR2"
+  },
+  {
+    "location": "SWLAB1"
+  },
+  {
+    "location": "HWLAB2"
+  },
+  {
+    "location": "NTU SRC"
+  },
+  {
+    "location": "NIE5-02-07"
+  },
+  {
+    "location": "NIE5-02-08"
+  },
+  {
+    "location": "NIE COURTS"
+  },
+  {
+    "location": "NIE5-B1-09"
+  },
+  {
+    "location": "NIE5-B2-04"
+  },
+  {
+    "location": "NIE5-B1-08"
+  },
+  {
+    "location": "NIE PITCH"
+  },
+  {
+    "location": "NIE5-02-04"
+  },
+  {
+    "location": "NIE5-B3-01"
+  },
+  {
+    "location": "NIE5-TR508"
+  }
+]
