@@ -36,24 +36,6 @@ export const Feedback = () => {
     return error;
   }
 
-  const sendEmail = (values) => {
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        values,
-        process.env.NEXT_PUBLIC_USER_ID
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
-
   return (
     <>
       <MotionBox whileHover={{ scale: 1.15 }}>
@@ -74,17 +56,38 @@ export const Feedback = () => {
           initialValues={{ name: "", email: "", message: "" }}
           onSubmit={(values) => {
             JSON.stringify(values);
-
-            sendEmail(values);
-            onClose();
-            toast({
-              title: "Feedback sent",
-              description: "Feedback successfully sent. Thank you!!",
-              status: "success",
-              duration: 5000,
-              isClosable: true,
-              position: "top",
-            });
+            try {
+              emailjs
+                .send(
+                  process.env.NEXT_PUBLIC_SERVICE_ID,
+                  process.env.NEXT_PUBLIC_TEMPLATE_ID,
+                  values,
+                  process.env.NEXT_PUBLIC_USER_ID
+                )
+                .then(() => {
+                  toast({
+                    title: "Feedback sent",
+                    description: "feedback successfully sent. thank you🙏",
+                    status: "success",
+                    duration: 5000,
+                    isClosable: true,
+                    position: "top",
+                  });
+                });
+            } catch (error) {
+              toast({
+                title: "Feedback not sent",
+                description:
+                  "oh no.. something went wrong😌 please contact us on our github.",
+                status: "warning",
+                duration: 5000,
+                isClosable: true,
+                position: "top",
+              });
+              throw new Error(error.text);
+            } finally {
+              onClose();
+            }
           }}
         >
           {() => (
