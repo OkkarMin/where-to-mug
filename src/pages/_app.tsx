@@ -24,9 +24,12 @@ function MyApp({ Component, pageProps }: AppProps) {
               url: "/meta_image.png",
               width: 1200,
               height: 630,
-              alt: "Image of two students with a blue question mark in background",
             },
           ],
+        }}
+        // see https://stackoverflow.com/questions/53685817/obtain-a-good-big-large-image-in-rich-link-preview-in-telegram
+        twitter={{
+          cardType: "summary_large_image",
         }}
       />
       <Component {...pageProps} />
