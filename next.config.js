@@ -4,10 +4,13 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 const { withSentryConfig } = require("@sentry/nextjs");
+const withTM = require("next-transpile-modules")(["emailjs-com"]);
 
-const moduleExports = {
-  // your existing module.exports
-};
+// const moduleExports = {
+//   // your existing module.exports
+// };
+
+const moduleExports = withTM({});
 
 const SentryWebpackPluginOptions = {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that
@@ -25,7 +28,7 @@ const SentryWebpackPluginOptions = {
 // ensure that your source maps include changes from all other Webpack plugins
 module.exports = withSentryConfig(moduleExports, SentryWebpackPluginOptions);
 
-const withTM = require("next-transpile-modules")(["emailjs-com"]);
-module.exports = withTM({
-  /* Your Next.js config */
-});
+// const withTM = require("next-transpile-modules")(["emailjs-com"]);
+// module.exports = withTM({
+//   /* Your Next.js config */
+// });
