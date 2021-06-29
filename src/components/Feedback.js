@@ -16,6 +16,7 @@ import {
   FormErrorMessage,
   useToast,
   Circle,
+  Textarea,
 } from "@chakra-ui/react";
 import { VscFeedback } from "react-icons/vsc";
 
@@ -169,7 +170,11 @@ const Feedback = () => {
                         <FormLabel marginTop="2" htmlFor="message">
                           Message
                         </FormLabel>
-                        <Input {...field} id="message" placeholder="message" />
+                        <Textarea
+                          {...field}
+                          id="message"
+                          placeholder="message"
+                        />
                         <FormErrorMessage>
                           {form.errors.message}
                         </FormErrorMessage>
