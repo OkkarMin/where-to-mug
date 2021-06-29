@@ -24,6 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               url: "/meta_image.png",
               width: 1200,
               height: 630,
+              alt: "Image of two students with a blue question mark in background",
             },
           ],
         }}
