@@ -47,12 +47,7 @@ export const Main: FC<{}> = () => {
       <DisclaimerModel />
       <Flex mt="2" ml={["4", "8"]} justify="space-between" align="center">
         {isWeekDay(numberDay) ? (
-          <Text fontSize="sm">
-            Free room data for{" "}
-            <span style={{ textDecoration: "underline" }}>
-              {shortDayToFullDay[currentDay]}
-            </span>
-          </Text>
+          <Text fontSize="sm">hmm.. where to mug?📚📚</Text>
         ) : (
           <Text fontSize="sm">
             Its weekend. Rmb to take a break. Love you💗
