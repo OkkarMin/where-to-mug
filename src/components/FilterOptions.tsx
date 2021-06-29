@@ -111,7 +111,7 @@ export const FilterOptions: FC<{
         colorScheme="linkedin"
         variant="filled"
         margin="5px"
-        width="full"
+        width={["full", "50vw"]}
       />
     </Flex>
   );
