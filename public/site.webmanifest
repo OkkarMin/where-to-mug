@@ -1,0 +1,21 @@
+{
+  "name": "Which Room Free | NTU",
+  "short_name": "Which Room Free",
+  "start_url": ".",
+  "description": "Ever wonder which tutorial rooms are 'free'? Which-room-free is here to help you determine which tutorial rooms are free and which are not 😊",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#90CDF4",
+  "background_color": "#EDF2F7",
+  "display": "standalone"
+}
