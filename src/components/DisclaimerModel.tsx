@@ -50,10 +50,9 @@ export const DisclaimerModel: FC<{}> = () => {
           <br />
           Search which tutorial room is free by:
           <UnorderedList>
-            <ListItem>typing in room name or</ListItem>
-            <ListItem>
-              selecting a time slot to see which room(s) are free
-            </ListItem>
+            <ListItem>day of the week</ListItem>
+            <ListItem>room name and</ListItem>
+            <ListItem>time slot</ListItem>
           </UnorderedList>
           <br />
           <VStack>
@@ -73,7 +72,8 @@ export const DisclaimerModel: FC<{}> = () => {
           >
             here <ExternalLinkIcon />{" "}
           </Link>
-          and wrangled using Python to data shape we want. See full source code{" "}
+          and wrangled using Python to data shape we want. See source code for
+          this app{" "}
           <Link
             color="linkedin.500"
             href="https://github.com/OkkarMin/which-room-free"
@@ -83,11 +83,10 @@ export const DisclaimerModel: FC<{}> = () => {
           </Link>
           <br />
           <br />
-          * initial data is from NTU course registration. Rooms might be
-          occupied by others means (e.g. Tutors reschedule to use the room)
+          *initial data is from NTU course registration.
           <br />
           <br />
-          The tool is provided AS-IS. We take no responsibility for events
+          The tool is provided AS-IS. We take no responsibility for any events
           arising from use of this tool 😊
         </ModalBody>
         <ModalFooter>
