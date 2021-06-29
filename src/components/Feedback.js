@@ -1,3 +1,5 @@
+import * as Sentry from "@sentry/nextjs";
+
 import {
   Button,
   Circle,
@@ -84,7 +86,7 @@ export const Feedback = () => {
                 isClosable: true,
                 position: "top",
               });
-              throw new Error(error.text);
+              Sentry.captureException(error);
             } finally {
               onClose();
             }
