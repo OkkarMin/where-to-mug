@@ -1,22 +1,20 @@
-import React from "react";
-
 import {
   Button,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalCloseButton,
-  ModalBody,
+  Circle,
   FormControl,
+  FormErrorMessage,
   FormLabel,
   Input,
-  ModalHeader,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
   ModalFooter,
-  useDisclosure,
-  FormErrorMessage,
-  useToast,
-  Circle,
+  ModalHeader,
+  ModalOverlay,
   Textarea,
+  useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
 import { VscFeedback } from "react-icons/vsc";
 
@@ -26,33 +24,9 @@ import { motion } from "framer-motion";
 
 const MotionBox = motion(Circle);
 
-const Feedback = () => {
+export const Feedback = () => {
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  function validateSubject(value) {
-    let error;
-    if (!value) {
-      error = "Subject is required";
-    }
-    return error;
-  }
-
-  function validateName(value) {
-    let error;
-    if (!value) {
-      error = "Name is required";
-    }
-    return error;
-  }
-
-  function validateEmail(value) {
-    let error;
-    if (!value) {
-      error = "Email is required";
-    }
-    return error;
-  }
 
   function validateMsg(value) {
     let error;
@@ -81,7 +55,7 @@ const Feedback = () => {
   };
 
   return (
-    <div>
+    <>
       <MotionBox whileHover={{ scale: 1.15 }}>
         <Circle
           as="button"
@@ -94,16 +68,15 @@ const Feedback = () => {
           <VscFeedback size="30px" color="white" />
         </Circle>
       </MotionBox>
-      {/* <Button onClick={onOpen}>Open Modal</Button> */}
 
       <Modal size="6xl" isOpen={isOpen} onClose={onClose}>
         <Formik
-          initialValues={{ subject: "", name: "", email: "", message: "" }}
+          initialValues={{ name: "", email: "", message: "" }}
           onSubmit={(values) => {
             JSON.stringify(values);
 
             sendEmail(values);
-
+            onClose();
             toast({
               title: "Feedback sent",
               description: "Feedback successfully sent. Thank you!!",
@@ -121,22 +94,7 @@ const Feedback = () => {
                 <ModalHeader>Tell us your feedback</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
-                  <Field name="subject" validate={validateSubject}>
-                    {({ field, form }) => (
-                      <FormControl
-                        isInvalid={form.errors.subject && form.touched.subject}
-                      >
-                        <FormLabel marginTop="2" htmlFor="subject">
-                          Subject
-                        </FormLabel>
-                        <Input {...field} id="subject" placeholder="subject" />
-                        <FormErrorMessage>
-                          {form.errors.subject}
-                        </FormErrorMessage>
-                      </FormControl>
-                    )}
-                  </Field>
-                  <Field name="name" validate={validateName}>
+                  <Field name="name">
                     {({ field, form }) => (
                       <FormControl
                         isInvalid={form.errors.name && form.touched.name}
@@ -144,12 +102,13 @@ const Feedback = () => {
                         <FormLabel marginTop="2" htmlFor="name">
                           Name
                         </FormLabel>
-                        <Input {...field} id="name" placeholder="name" />
+                        <Input {...field} id="name" placeholder="Dankar-san" />
                         <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
-                  <Field name="email" validate={validateEmail}>
+
+                  <Field name="email">
                     {({ field, form }) => (
                       <FormControl
                         isInvalid={form.errors.email && form.touched.email}
@@ -157,23 +116,28 @@ const Feedback = () => {
                         <FormLabel marginTop="2" htmlFor="email">
                           Email
                         </FormLabel>
-                        <Input {...field} id="email" placeholder="email" />
+                        <Input
+                          {...field}
+                          id="email"
+                          placeholder="dankarsan@email.com"
+                        />
                         <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
+
                   <Field name="message" validate={validateMsg}>
                     {({ field, form }) => (
                       <FormControl
                         isInvalid={form.errors.message && form.touched.message}
                       >
                         <FormLabel marginTop="2" htmlFor="message">
-                          Message
+                          Descirption*
                         </FormLabel>
                         <Textarea
                           {...field}
                           id="message"
-                          placeholder="message"
+                          placeholder="Let us know your.. feature request | feedback"
                         />
                         <FormErrorMessage>
                           {form.errors.message}
@@ -187,6 +151,7 @@ const Feedback = () => {
                   <Button type="submit" colorScheme="blue" mr={3}>
                     Submit
                   </Button>
+
                   <Button onClick={onClose}>Cancel</Button>
                 </ModalFooter>
               </ModalContent>
@@ -194,8 +159,6 @@ const Feedback = () => {
           )}
         </Formik>
       </Modal>
-    </div>
+    </>
   );
 };
-
-export default Feedback;

@@ -7,7 +7,7 @@ import { DisclaimerModel } from "./DisclaimerModel";
 import { FilterOptions } from "./FilterOptions";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { ScrollToTop } from "./autoScrollTop/ScrollToTop";
-import Feedback from "../components/Feedback";
+import { Feedback } from "./Feedback";
 
 const shortDayToFullDay = {
   MON: "Monday",
