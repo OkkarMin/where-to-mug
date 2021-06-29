@@ -18,13 +18,11 @@ const shortDayToFullDay = {
 };
 
 const numberDayToStringDay = {
-  0: "MON",
   1: "MON",
   2: "TUE",
   3: "WED",
   4: "THU",
   5: "FRI",
-  6: "MON",
 };
 
 const isWeekDay = (numberDay: number) => 1 <= numberDay && numberDay <= 5;
@@ -34,7 +32,7 @@ export const Main: FC<{}> = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [timeSlot, setTimeSlot] = useState<string>("All");
   const [currentDay, setCurrentDay] = useState<string>(
-    numberDayToStringDay[numberDay]
+    isWeekDay(numberDay) ? numberDayToStringDay[numberDay] : "MON"
   );
 
   const handleSearchTextChange = (e: ChangeEvent<any>) =>
