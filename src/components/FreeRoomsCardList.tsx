@@ -5,7 +5,7 @@ import { SimpleGrid } from "@chakra-ui/layout";
 import { FreeRoomCard } from "./FreeRoomCard";
 
 import room_occupancy from "../../data/room_occupancy.json";
-import room_to_map_id from "../../data/room_to_map_id.json";
+import room_ids from "../../data/room_ids.json";
 
 export const FreeRoomsCardList: FC<{
   searchText: string;
@@ -31,7 +31,7 @@ export const FreeRoomsCardList: FC<{
             key={i}
             timeSlots={room_occupancy[stringDay][room]}
             room={room}
-            map_id={room_to_map_id[room]}
+            room_id={room_ids[room]}
           />
         ))}
     </SimpleGrid>

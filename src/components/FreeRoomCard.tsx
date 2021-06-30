@@ -14,7 +14,7 @@ import { NotAllowedIcon, TimeIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 export interface IFreeRoomCard {
   timeSlots: Record<string, boolean>;
   room: string;
-  map_id: string;
+  room_id: string;
 }
 
 export const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
@@ -41,7 +41,7 @@ export const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
 export const FreeRoomCard: FC<IFreeRoomCard> = ({
   timeSlots,
   room,
-  map_id,
+  room_id,
 }) => {
   return (
     <Box
@@ -60,7 +60,7 @@ export const FreeRoomCard: FC<IFreeRoomCard> = ({
             {room}
           </Heading>
           <Link
-            href={`https://maps.ntu.edu.sg/#/ntu/d386ffa80e4e46f286d17f08/poi/details/${map_id}`}
+            href={`https://maps.ntu.edu.sg/#/ntu/d386ffa80e4e46f286d17f08/poi/details/${room_id}`}
             isExternal
           >
             <IconButton
