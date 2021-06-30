@@ -1,4 +1,4 @@
-import  { FC } from "react";
+import { FC } from "react";
 
 import { Flex, Badge, Box, Heading, Link, HStack, IconButton } from "@chakra-ui/react";
 import { NotAllowedIcon, TimeIcon, ExternalLinkIcon } from "@chakra-ui/icons";

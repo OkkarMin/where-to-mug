@@ -5,7 +5,6 @@ import { SimpleGrid } from "@chakra-ui/layout";
 import { FreeRoomCard } from "./FreeRoomCard";
 
 import room_occupancy from "../../data/room_occupancy.json";
-
 import room_id from "../../data/roomfreeCSV.json";
 
 export const FreeRoomsCardList: FC<{
@@ -15,7 +14,7 @@ export const FreeRoomsCardList: FC<{
 }> = ({ searchText, timeSlot, stringDay }) => {
   const rooms = Object.keys(room_occupancy[stringDay]).sort();
 
-  const roomIdList = room_id[0];
+  const roomIdList = room_id;
 
 
   return (
@@ -27,8 +26,7 @@ export const FreeRoomsCardList: FC<{
             timeSlot == "All"
               ? true
               : room_occupancy[stringDay][room][timeSlot];
-              
-       
+                    
           return hasRoomName && hasAvailableSlot;
         })
         .map((room: string, i: number) => (
