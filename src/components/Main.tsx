@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, useState } from "react";
 
-import { Button, Flex, Spacer, Text, Link, VStack } from "@chakra-ui/react";
+import { Button, Flex, Text, Link, VStack } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 import { DisclaimerModel } from "./DisclaimerModel";
@@ -8,14 +8,6 @@ import { FilterOptions } from "./FilterOptions";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { ScrollToTop } from "./autoScrollTop/ScrollToTop";
 import { Feedback } from "./Feedback";
-
-const shortDayToFullDay = {
-  MON: "Monday",
-  TUE: "Tuesday",
-  WED: "Wednesday",
-  THU: "Thursday",
-  FRI: "Friday",
-};
 
 const numberDayToStringDay = {
   1: "MON",
@@ -86,12 +78,6 @@ export const Main: FC<{}> = () => {
         <Feedback />
         <ScrollToTop />
       </VStack>
-
-      <Spacer />
-
-      <Text textAlign="center" fontSize="xs" py="4">
-        2021 © Okkar
-      </Text>
     </Flex>
   );
 };
