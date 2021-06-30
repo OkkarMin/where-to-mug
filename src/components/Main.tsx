@@ -33,6 +33,7 @@ export const Main: FC<{}> = () => {
     setTimeSlot(e.target.value);
   const handleDayChange = (e: ChangeEvent<any>) =>
     setCurrentDay(e.target.value);
+  const handleDeleteTextChange = () => setSearchText("");
 
   return (
     <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
@@ -58,6 +59,7 @@ export const Main: FC<{}> = () => {
       </Flex>
       <FilterOptions
         searchText={searchText}
+        handleDeleteTextChange={handleDeleteTextChange}
         handleSearchTextChange={handleSearchTextChange}
         timeSlot={timeSlot}
         handleTimeSlotChange={handleTimeSlotChange}
