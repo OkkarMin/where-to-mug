@@ -3,6 +3,7 @@ import { FC, ChangeEventHandler, MouseEventHandler } from "react";
 import {
   Button,
   Flex,
+  HStack,
   IconButton,
   Input,
   Menu,
@@ -111,11 +112,10 @@ export const FilterOptions: FC<{
           </MenuGroup>
         </MenuList>
       </Menu>
-      <Flex width={["full", "50vw"]} align="center">
+      <HStack margin="5px" width={["full", "50vw"]} align="center">
         <Input
           borderColor="linkedinBlue"
           colorScheme="linkedin"
-          margin="5px"
           onChange={handleSearchTextChange}
           placeholder="Room name... AMDLAB | ART-01-19"
           value={searchText}
@@ -130,7 +130,7 @@ export const FilterOptions: FC<{
         >
           <CloseIcon />
         </IconButton>
-      </Flex>
+      </HStack>
     </Flex>
   );
 };
