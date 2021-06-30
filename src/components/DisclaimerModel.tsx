@@ -35,7 +35,7 @@ export const DisclaimerModel: FC<{}> = () => {
       <ModalContent>
         <ModalHeader>
           Thank you for checking out
-          <Text textDecoration="underline">which-room-free</Text>
+          <Text textDecoration="underline">Where To Mug</Text>
         </ModalHeader>
         <Image
           width="300"

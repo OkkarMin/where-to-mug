@@ -9,16 +9,16 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={theme}>
       <DefaultSeo
-        title="Which Room Free | NTU"
-        description="Ever wonder which tutorial rooms are 'free'? Which-room-free is here to help you determine which tutorial rooms are free and which are not 😊"
-        canonical="https://whichroomfree.ml"
+        title="Where To Mug | NTU"
+        description="Ever wonder which tutorial rooms are 'free'? Where To Mug is here to help you determine which tutorial rooms are free and which are not 😊"
+        canonical="https://wheretomug.ml"
         openGraph={{
           type: "website",
-          url: "https://whichroomfree.ml",
-          site_name: "Which Room Free",
-          title: "Which Room Free | NTU",
+          url: "https://wheretomug.ml",
+          site_name: "Which To Mug",
+          title: "Where To Mug | NTU",
           description:
-            "Ever wonder which tutorial rooms are 'free'? Which-room-free is here to help you determine which tutorial rooms are free and which are not 😊",
+            "Ever wonder which tutorial rooms are 'free'? Where To Mug is here to help you determine which tutorial rooms are free and which are not 😊",
           images: [
             {
               url: "/meta_image.png",
