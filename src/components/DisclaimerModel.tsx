@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC } from "react";
 import Image from "next/image";
 
 import {
@@ -21,16 +21,10 @@ import { TimeSlotBadge } from "./FreeRoomCard";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export const DisclaimerModel: FC<{}> = () => {
-  const btnRef = useRef();
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
 
   return (
-    <Modal
-      initialFocusRef={btnRef}
-      isOpen={isOpen}
-      onClose={onClose}
-      closeOnOverlayClick={false}
-    >
+    <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>
@@ -90,7 +84,7 @@ export const DisclaimerModel: FC<{}> = () => {
           arising from use of this tool 😊
         </ModalBody>
         <ModalFooter>
-          <Button ref={btnRef} colorScheme="linkedin" onClick={onClose}>
+          <Button colorScheme="linkedin" onClick={onClose}>
             Understood 👌
           </Button>
         </ModalFooter>
