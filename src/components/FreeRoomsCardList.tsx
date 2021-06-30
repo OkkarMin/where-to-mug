@@ -6,12 +6,17 @@ import { FreeRoomCard } from "./FreeRoomCard";
 
 import room_occupancy from "../../data/room_occupancy.json";
 
+import room_id from "../../data/roomfreeCSV.json";
+
 export const FreeRoomsCardList: FC<{
   searchText: string;
   timeSlot: string;
   stringDay: string;
 }> = ({ searchText, timeSlot, stringDay }) => {
   const rooms = Object.keys(room_occupancy[stringDay]).sort();
+
+  const roomIdList = room_id[0];
+
 
   return (
     <SimpleGrid minChildWidth="340px" spacing="2" mt="4" px={["4", "8"]}>
@@ -22,7 +27,8 @@ export const FreeRoomsCardList: FC<{
             timeSlot == "All"
               ? true
               : room_occupancy[stringDay][room][timeSlot];
-
+              
+       
           return hasRoomName && hasAvailableSlot;
         })
         .map((room: string, i: number) => (
@@ -30,8 +36,10 @@ export const FreeRoomsCardList: FC<{
             key={i}
             timeSlots={room_occupancy[stringDay][room]}
             room={room}
+            ids={roomIdList[room]}
           />
-        ))}
+        ))
+        }
     </SimpleGrid>
   );
 };

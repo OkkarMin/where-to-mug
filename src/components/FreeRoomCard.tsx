@@ -1,11 +1,12 @@
-import { FC } from "react";
+import  { FC } from "react";
 
-import { Flex, Badge, Box, Heading } from "@chakra-ui/react";
-import { NotAllowedIcon, TimeIcon } from "@chakra-ui/icons";
+import { Flex, Badge, Box, Heading, Link, HStack, IconButton } from "@chakra-ui/react";
+import { NotAllowedIcon, TimeIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 
 export interface IFreeRoomCard {
   timeSlots: Record<string, boolean>;
   room: string;
+  ids: string
 }
 
 export const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
@@ -29,8 +30,9 @@ export const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
   );
 };
 
-export const FreeRoomCard: FC<IFreeRoomCard> = ({ timeSlots, room }) => {
+export const FreeRoomCard: FC<IFreeRoomCard> = ({ timeSlots, room, ids }) => {
   return (
+    
     <Box
       w="xs"
       mx="auto"
@@ -39,12 +41,17 @@ export const FreeRoomCard: FC<IFreeRoomCard> = ({ timeSlots, room }) => {
       shadow="base"
       rounded="md"
       bg="white"
-      _hover={{ shadow: "2xl" }}
+      _hover={{ shadow: "2xl", textDecoration:"none"}}
     >
       <Box alignContent="center">
+        <HStack justify="space-between">
         <Heading as="h1" fontSize="xl">
           {room}
         </Heading>
+        <Link href={`https://maps.ntu.edu.sg/#/ntu/d386ffa80e4e46f286d17f08/poi/details/${ids}`} isExternal>
+        <IconButton rounded="md" backgroundColor="white" aria-label="Go to map" icon={<ExternalLinkIcon boxSize="1.5em" />} />
+        </Link>
+        </HStack>
         <Flex mt="4" justify="space-around" wrap="wrap">
           {Object.keys(timeSlots).map((slot: string, i: number) => (
             <TimeSlotBadge key={i} slot={slot} isFree={timeSlots[slot]} />
@@ -52,5 +59,6 @@ export const FreeRoomCard: FC<IFreeRoomCard> = ({ timeSlots, room }) => {
         </Flex>
       </Box>
     </Box>
+   
   );
 };
