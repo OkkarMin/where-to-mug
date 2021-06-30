@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import Image from "next/image";
 
 import {
@@ -9,7 +9,6 @@ import {
   ModalBody,
   ModalContent,
   ModalFooter,
-  ModalHeader,
   ModalOverlay,
   Text,
   UnorderedList,
@@ -22,20 +21,23 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export const DisclaimerModel: FC<{}> = () => {
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
+  const headerRef = useRef();
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false}>
+    <Modal
+      initialFocusRef={headerRef}
+      isOpen={isOpen}
+      onClose={onClose}
+      closeOnOverlayClick={false}
+    >
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>
-          Thank you for checking out
-          <Text textDecoration="underline">Where To Mug</Text>
-        </ModalHeader>
+      <ModalContent ref={headerRef}>
         <Image
           width="300"
           height="200"
           layout="responsive"
           src="/assets/study_modal_image.svg"
+          alt="An illustration of a girl sitting down studying. With book open and pen on her right hand"
         />
         <ModalBody>
           Ever wonder which tutorial room is free* and which is not? 🤨 This
