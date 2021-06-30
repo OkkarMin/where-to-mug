@@ -49,7 +49,7 @@ export const FreeRoomCard: FC<IFreeRoomCard> = ({ timeSlots, room, ids }) => {
           {room}
         </Heading>
         <Link href={`https://maps.ntu.edu.sg/#/ntu/d386ffa80e4e46f286d17f08/poi/details/${ids}`} isExternal>
-        <IconButton backgroundColor="white" aria-label="Go to map" icon={<ExternalLinkIcon boxSize="1.5em" />} />
+        <IconButton rounded="md" backgroundColor="white" aria-label="Go to map" icon={<ExternalLinkIcon boxSize="1.5em" />} />
         </Link>
         </HStack>
         <Flex mt="4" justify="space-around" wrap="wrap">
