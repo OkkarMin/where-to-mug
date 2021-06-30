@@ -15,7 +15,7 @@ export const FreeRoomsCardList: FC<{
 }> = ({ searchText, timeSlot, stringDay }) => {
   const rooms = Object.keys(room_occupancy[stringDay]).sort();
 
-  const roomIdList = room_id[0]
+  const roomIdList = room_id[0];
 
 
   return (
