@@ -23,7 +23,9 @@ export const FreeRoomsCardList: FC<{
     return hasRoomName && hasAvailableSlot;
   });
 
-  return fliteredRooms.length > 0 ? (
+  const haveRooms = fliteredRooms.length > 0;
+
+  return haveRooms ? (
     <SimpleGrid minChildWidth="340px" spacing="2" mt="4" px={["4", "8"]}>
       {fliteredRooms.map((room: string, i: number) => (
         <FreeRoomCard
