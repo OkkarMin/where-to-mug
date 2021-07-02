@@ -19,13 +19,15 @@ export const FreeRoomsCardList: FC<{
   const [fliteredRooms, setFliteredRooms] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const URLsearchText = encodeURIComponent(searchText);
+
   useEffect(() => {
     const api = async () => {
       setLoading(true);
 
       try {
         const response = await fetch(
-          `${server}/api/${currentDay}/${timeSlot}/${searchText}`
+          `${server}/api?currentDay=${currentDay}&timeSlot=${timeSlot}&searchText=${URLsearchText}`
         );
         const data = await response.json();
         setFliteredRooms(data);

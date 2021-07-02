@@ -1,11 +1,8 @@
 import room_occupancy from "../../../data/room_occupancy.json";
 
 export default function handler(req, res) {
-  const { slug } = req.query;
-
-  const currentDay = slug[0];
-  const timeSlot = slug[1];
-  const searchText = slug[2] == null ? "" : slug[2];
+  const { query } = req;
+  const { currentDay, timeSlot, searchText } = query;
 
   const rooms = Object.keys(room_occupancy[currentDay]).sort();
 
