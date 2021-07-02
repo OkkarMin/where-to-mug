@@ -3,12 +3,13 @@ import { ChangeEvent, FC, useState, useCallback } from "react";
 import { Button, Flex, Text, Link, VStack } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
+import { debounce } from "lodash";
+
 import { DisclaimerModel } from "./DisclaimerModel";
 import { FilterOptions } from "./FilterOptions";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { ScrollToTop } from "./autoScrollTop/ScrollToTop";
 import { Feedback } from "./Feedback";
-import { debounce } from "lodash";
 
 const numberDayToStringDay = {
   1: "MON",
@@ -36,9 +37,8 @@ export const Main: FC<{}> = () => {
   const handleSearchTextChange = (e: ChangeEvent<any>) => handleDebounce(e);
   const handleTimeSlotChange = (e: ChangeEvent<any>) =>
     setTimeSlot(e.target.value);
-  const handleDayChange = (e: ChangeEvent<any>) => {
+  const handleDayChange = (e: ChangeEvent<any>) =>
     setCurrentDay(e.target.value);
-  };
   const handleDeleteTextChange = () => setSearchText("");
 
   return (

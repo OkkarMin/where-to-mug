@@ -14,5 +14,5 @@ export default function handler(req, res) {
     return hasRoomName && hasAvailableSlot;
   });
 
-  res.status(200).json(fliteredRooms);
+  return res.status(200).json(fliteredRooms);
 }
