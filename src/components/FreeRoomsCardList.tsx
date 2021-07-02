@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 import { Spinner, SimpleGrid, Box } from "@chakra-ui/react";
 
-import { server } from "../../config";
 import { FreeRoomCard } from "./FreeRoomCard";
 import { RoomNotFound } from "./RoomNotFound";
 
@@ -27,7 +26,7 @@ export const FreeRoomsCardList: FC<{
 
       try {
         const response = await fetch(
-          `${server}/api?currentDay=${currentDay}&timeSlot=${timeSlot}&searchText=${URLsearchText}`
+          `/api?currentDay=${currentDay}&timeSlot=${timeSlot}&searchText=${URLsearchText}`
         );
         const data = await response.json();
         setFliteredRooms(data);
