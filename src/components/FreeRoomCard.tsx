@@ -30,9 +30,8 @@ export const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
       textTransform="uppercase"
       colorScheme={isFree ? "linkedin" : "red"}
       variant="subtle"
-      w="110px"
+      w="auto"
     >
-      {isFree ? <TimeIcon mr="2" /> : <NotAllowedIcon mr="2" />}
       {slot}
     </Badge>
   );
