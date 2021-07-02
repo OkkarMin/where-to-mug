@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useState, useCallback } from "react";
 
 import { Button, Flex, Text, Link, VStack } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -8,6 +8,7 @@ import { FilterOptions } from "./FilterOptions";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
 import { ScrollToTop } from "./autoScrollTop/ScrollToTop";
 import { Feedback } from "./Feedback";
+import { debounce } from "lodash";
 
 const numberDayToStringDay = {
   1: "MON",
@@ -22,17 +23,22 @@ const numberDay = new Date().getDay();
 
 export const Main: FC<{}> = () => {
   const [searchText, setSearchText] = useState<string>("");
-  const [timeSlot, setTimeSlot] = useState<string>("All");
+  const [timeSlot, setTimeSlot] = useState<string>("ALL");
   const [currentDay, setCurrentDay] = useState<string>(
     isWeekDay(numberDay) ? numberDayToStringDay[numberDay] : "MON"
   );
 
-  const handleSearchTextChange = (e: ChangeEvent<any>) =>
-    setSearchText(e.target.value);
+  const handleDebounce = useCallback(
+    debounce((e) => setSearchText(e.target.value), 1000),
+    []
+  );
+
+  const handleSearchTextChange = (e: ChangeEvent<any>) => handleDebounce(e);
   const handleTimeSlotChange = (e: ChangeEvent<any>) =>
     setTimeSlot(e.target.value);
-  const handleDayChange = (e: ChangeEvent<any>) =>
+  const handleDayChange = (e: ChangeEvent<any>) => {
     setCurrentDay(e.target.value);
+  };
   const handleDeleteTextChange = () => setSearchText("");
 
   return (
@@ -69,7 +75,7 @@ export const Main: FC<{}> = () => {
       <FreeRoomsCardList
         searchText={searchText}
         timeSlot={timeSlot}
-        stringDay={currentDay}
+        currentDay={currentDay}
       />
       <VStack
         direction="column"

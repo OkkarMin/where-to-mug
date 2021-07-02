@@ -3,8 +3,6 @@ import { FC, ChangeEventHandler, MouseEventHandler } from "react";
 import {
   Button,
   Flex,
-  HStack,
-  IconButton,
   Input,
   Menu,
   MenuButton,
@@ -12,15 +10,10 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import {
-  CalendarIcon,
-  ChevronDownIcon,
-  CloseIcon,
-  TimeIcon,
-} from "@chakra-ui/icons";
+import { CalendarIcon, ChevronDownIcon, TimeIcon } from "@chakra-ui/icons";
 
 const timeSlots = [
-  "All",
+  "ALL",
   "0830-0920",
   "0930-1020",
   "1030-1120",
@@ -48,8 +41,6 @@ export const FilterOptions: FC<{
   currentDay: string;
   handleDayChange: MouseEventHandler;
 }> = ({
-  searchText,
-  handleDeleteTextChange,
   handleSearchTextChange,
   timeSlot,
   handleTimeSlotChange,
@@ -112,25 +103,16 @@ export const FilterOptions: FC<{
           </MenuGroup>
         </MenuList>
       </Menu>
-      <HStack margin="5px" width={["full", "50vw"]} align="center">
-        <Input
-          borderColor="linkedinBlue"
-          colorScheme="linkedin"
-          onChange={handleSearchTextChange}
-          placeholder="Room name... AMDLAB | ART-01-19"
-          value={searchText}
-          variant="filled"
-          width={["full", "50vw"]}
-        />
-        <IconButton
-          aria-label="Empty search box"
-          onClick={handleDeleteTextChange}
-          rounded="md"
-          size="sm"
-        >
-          <CloseIcon />
-        </IconButton>
-      </HStack>
+
+      <Input
+        borderColor="linkedinBlue"
+        colorScheme="linkedin"
+        onChange={handleSearchTextChange}
+        placeholder="Room name... AMDLAB | ART-01-19"
+        variant="filled"
+        width={["full", "50vw"]}
+        margin="5px"
+      />
     </Flex>
   );
 };
