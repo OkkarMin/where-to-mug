@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 
-import { SimpleGrid } from "@chakra-ui/react";
+import { Spinner, SimpleGrid, Box } from "@chakra-ui/react";
 
 import { FreeRoomCard } from "./FreeRoomCard";
 import { RoomNotFound } from "./RoomNotFound";
@@ -11,26 +11,44 @@ import room_ids from "../../data/room_ids.json";
 export const FreeRoomsCardList: FC<{
   searchText: string;
   timeSlot: string;
-  stringDay: string;
-}> = ({ searchText, timeSlot, stringDay }) => {
-  const rooms = Object.keys(room_occupancy[stringDay]).sort();
+  currentDay: string;
+}> = ({ searchText, timeSlot, currentDay }) => {
+  const [fliteredRooms, setFliteredRooms] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const fliteredRooms = rooms.filter((room: string) => {
-    const hasRoomName = room.includes(searchText.toUpperCase());
-    const hasAvailableSlot =
-      timeSlot == "All" ? true : room_occupancy[stringDay][room][timeSlot];
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
 
-    return hasRoomName && hasAvailableSlot;
-  });
+      try {
+        const encodedSearchText = encodeURIComponent(searchText);
+
+        const response = await fetch(
+          `/api?currentDay=${currentDay}&timeSlot=${timeSlot}&searchText=${encodedSearchText}`
+        );
+        const data = await response.json();
+        setFliteredRooms(data);
+      } catch (error) {
+        console.log(error);
+      }
+
+      setLoading(false);
+    };
+    fetchData();
+  }, [searchText, timeSlot, currentDay]);
 
   const haveRooms = fliteredRooms.length > 0;
 
-  return haveRooms ? (
+  return loading ? (
+    <Box mt="20" width="full" align="center">
+      <Spinner size="xl" />
+    </Box>
+  ) : haveRooms ? (
     <SimpleGrid minChildWidth="340px" spacing="2" mt="4" px={["4", "8"]}>
-      {fliteredRooms.map((room: string, i: number) => (
+      {fliteredRooms.map((room, i) => (
         <FreeRoomCard
           key={i}
-          timeSlots={room_occupancy[stringDay][room]}
+          timeSlots={room_occupancy[currentDay][room]}
           room={room}
           room_id={room_ids[room]}
         />

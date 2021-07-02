@@ -1,7 +1,9 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useState, useCallback } from "react";
 
 import { Button, Flex, Text, Link, VStack } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+
+import { debounce } from "lodash";
 
 import { DisclaimerModel } from "./DisclaimerModel";
 import { FilterOptions } from "./FilterOptions";
@@ -22,13 +24,17 @@ const numberDay = new Date().getDay();
 
 export const Main: FC<{}> = () => {
   const [searchText, setSearchText] = useState<string>("");
-  const [timeSlot, setTimeSlot] = useState<string>("All");
+  const [timeSlot, setTimeSlot] = useState<string>("ALL");
   const [currentDay, setCurrentDay] = useState<string>(
     isWeekDay(numberDay) ? numberDayToStringDay[numberDay] : "MON"
   );
 
-  const handleSearchTextChange = (e: ChangeEvent<any>) =>
-    setSearchText(e.target.value);
+  const handleDebounce = useCallback(
+    debounce((e) => setSearchText(e.target.value), 1000),
+    []
+  );
+
+  const handleSearchTextChange = (e: ChangeEvent<any>) => handleDebounce(e);
   const handleTimeSlotChange = (e: ChangeEvent<any>) =>
     setTimeSlot(e.target.value);
   const handleDayChange = (e: ChangeEvent<any>) =>
@@ -69,7 +75,7 @@ export const Main: FC<{}> = () => {
       <FreeRoomsCardList
         searchText={searchText}
         timeSlot={timeSlot}
-        stringDay={currentDay}
+        currentDay={currentDay}
       />
       <VStack
         direction="column"

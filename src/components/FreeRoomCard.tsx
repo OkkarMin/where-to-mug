@@ -72,9 +72,13 @@ export const FreeRoomCard: FC<IFreeRoomCard> = ({
           </Link>
         </HStack>
         <Flex mt="4" justify="space-around" wrap="wrap">
-          {Object.keys(timeSlots).map((slot: string, i: number) => (
-            <TimeSlotBadge key={i} slot={slot} isFree={timeSlots[slot]} />
-          ))}
+          {timeSlots == null ? (
+            <div>Not free at all sial</div>
+          ) : (
+            Object.keys(timeSlots).map((slot: string, i: number) => (
+              <TimeSlotBadge key={i} slot={slot} isFree={timeSlots[slot]} />
+            ))
+          )}
         </Flex>
       </Box>
     </Box>
