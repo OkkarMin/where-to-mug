@@ -1,10 +1,12 @@
-const environment = process.env.VERCEL_ENV;
+const environment = process.env.NEXT_PUBLIC_VERCEL_ENV;
 
-export const server = () => {
-  if (environment == "production") {
-    return "https://wheretomug.ml";
-  } else if (environment == "preview") {
-    return "https://where-to-mug-git-refactor-extractfiltertoapi-okkar.vercel.app";
-  }
-  return "http://localhost:3000";
-};
+let server;
+if (environment === "production") {
+  server = "https://wheretomug.ml";
+} else if (environment === "preview") {
+  server = process.env.NEXT_PUBLIC_VERCEL_URL;
+} else {
+  server = "http://localhost:3000";
+}
+
+export { server };
