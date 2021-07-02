@@ -1,5 +1,5 @@
-const dev = process.env.VERCEL_ENV !== "production";
+const dev = process.env.NEXT_PUBLIC_VERCEL_ENV !== "production";
 
 export const server = dev
-  ? "https://where-to-mug-git-refactor-extractfiltertoapi-okkar.vercel.app"
-  : "https://wheretomug.ml";
+  ? "http://localhost:3000"
+  : process.env.NEXT_PUBLIC_VERCEL_URL;
