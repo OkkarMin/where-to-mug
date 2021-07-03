@@ -45,8 +45,9 @@ export const Main: FC<{}> = () => {
   const handleSearchTextChange = (e: ChangeEvent<any>) =>
     handleSearchTextDebounce(e);
   const handleTimeSlotChange = (e: ChangeEvent<any>) =>
-    handleTimeSlotDebounce(e);
-  const handleDayChange = (e: ChangeEvent<any>) => handleCurrentDayDebounce(e);
+    handleTimeSlotSelectDebounce(e);
+  const handleDayChange = (e: ChangeEvent<any>) =>
+    handleCurrentDaySelectDebounce(e);
 
   return (
     <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
