@@ -33,7 +33,7 @@ export const Main: FC<{}> = () => {
     debounce((e) => setSearchText(e.target.value), 1000),
     []
   );
-  const handleTimeSlotDebounce = useCallback(
+  const handleTimeSlotSelectDebounce = useCallback(
     debounce((e) => setTimeSlot(e.target.value), 125),
     []
   );
