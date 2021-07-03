@@ -37,7 +37,7 @@ export const Main: FC<{}> = () => {
     debounce((e) => setTimeSlot(e.target.value), 125),
     []
   );
-  const handleCurrentDayDebounce = useCallback(
+  const handleCurrentDaySelectDebounce = useCallback(
     debounce((e) => setCurrentDay(e.target.value), 125),
     []
   );
