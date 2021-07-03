@@ -23,6 +23,7 @@ export const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
 }) => {
   return (
     <Badge
+      align="center"
       px={3}
       py={1}
       m="1"
