@@ -3,13 +3,13 @@ import { FC } from "react";
 import {
   Badge,
   Box,
-  Flex,
   Heading,
   HStack,
   IconButton,
   Link,
+  SimpleGrid,
 } from "@chakra-ui/react";
-import { NotAllowedIcon, TimeIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export interface IFreeRoomCard {
   timeSlots: Record<string, boolean>;
@@ -23,6 +23,7 @@ export const TimeSlotBadge: FC<{ slot: string; isFree: boolean }> = ({
 }) => {
   return (
     <Badge
+      align="center"
       px={3}
       py={1}
       m="1"
@@ -70,7 +71,7 @@ export const FreeRoomCard: FC<IFreeRoomCard> = ({
             />
           </Link>
         </HStack>
-        <Flex mt="4" justify="space-around" wrap="wrap">
+        <SimpleGrid columns={2} mt="4">
           {timeSlots == null ? (
             <div>Not free at all sial</div>
           ) : (
@@ -78,7 +79,7 @@ export const FreeRoomCard: FC<IFreeRoomCard> = ({
               <TimeSlotBadge key={i} slot={slot} isFree={timeSlots[slot]} />
             ))
           )}
-        </Flex>
+        </SimpleGrid>
       </Box>
     </Box>
   );
