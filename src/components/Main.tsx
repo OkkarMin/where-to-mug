@@ -29,17 +29,25 @@ export const Main: FC<{}> = () => {
     isWeekDay(numberDay) ? numberDayToStringDay[numberDay] : "MON"
   );
 
-  const handleDebounce = useCallback(
+  const handleSearchTextDebounce = useCallback(
     debounce((e) => setSearchText(e.target.value), 1000),
     []
   );
+  const handleTimeSlotSelectDebounce = useCallback(
+    debounce((e) => setTimeSlot(e.target.value), 125),
+    []
+  );
+  const handleCurrentDaySelectDebounce = useCallback(
+    debounce((e) => setCurrentDay(e.target.value), 125),
+    []
+  );
 
-  const handleSearchTextChange = (e: ChangeEvent<any>) => handleDebounce(e);
+  const handleSearchTextChange = (e: ChangeEvent<any>) =>
+    handleSearchTextDebounce(e);
   const handleTimeSlotChange = (e: ChangeEvent<any>) =>
-    setTimeSlot(e.target.value);
+    handleTimeSlotSelectDebounce(e);
   const handleDayChange = (e: ChangeEvent<any>) =>
-    setCurrentDay(e.target.value);
-  const handleDeleteTextChange = () => setSearchText("");
+    handleCurrentDaySelectDebounce(e);
 
   return (
     <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
@@ -64,8 +72,6 @@ export const Main: FC<{}> = () => {
         </Link>
       </Flex>
       <FilterOptions
-        searchText={searchText}
-        handleDeleteTextChange={handleDeleteTextChange}
         handleSearchTextChange={handleSearchTextChange}
         timeSlot={timeSlot}
         handleTimeSlotChange={handleTimeSlotChange}

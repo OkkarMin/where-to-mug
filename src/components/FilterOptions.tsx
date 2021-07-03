@@ -33,8 +33,6 @@ const timeSlots = [
 const dayList = ["MON", "TUE", "WED", "THU", "FRI"];
 
 export const FilterOptions: FC<{
-  searchText: string;
-  handleDeleteTextChange: MouseEventHandler;
   handleSearchTextChange: ChangeEventHandler;
   timeSlot: string;
   handleTimeSlotChange: MouseEventHandler;
