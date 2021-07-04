@@ -48,7 +48,7 @@ export const FilterOptions: FC<{
   }) => {
     return (
       <Flex direction={["column", "row"]} mt="2" px={["4", "8"]} align="center">
-        <Menu>
+        <Menu autoSelect={false} isLazy={true}>
           <MenuButton
             as={Button}
             colorScheme="linkedin"
@@ -75,7 +75,7 @@ export const FilterOptions: FC<{
             </MenuGroup>
           </MenuList>
         </Menu>
-        <Menu>
+        <Menu autoSelect={false} isLazy={true}>
           <MenuButton
             as={Button}
             colorScheme="linkedin"
@@ -87,7 +87,10 @@ export const FilterOptions: FC<{
           >
             {timeSlot}
           </MenuButton>
-          <MenuList>
+          <MenuList
+            height={["70vh", "70vh", "60vh", "auto"]}
+            overflowY={["auto", "auto", "auto", "unset"]}
+          >
             <MenuGroup title="Timeslot">
               {timeSlots.map((slot: string, i: number) => (
                 <MenuItem
