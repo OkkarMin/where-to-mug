@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Circle } from "@chakra-ui/react";
 import { FaArrowCircleUp } from "react-icons/fa";
@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const MotionBox = motion(Circle);
 
-export const ScrollToTop = () => {
+export const ScrollToTop = React.memo(() => {
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {
@@ -41,4 +41,4 @@ export const ScrollToTop = () => {
       </Circle>
     </MotionBox>
   );
-};
+});

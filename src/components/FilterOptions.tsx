@@ -1,4 +1,4 @@
-import { FC, ChangeEventHandler, MouseEventHandler } from "react";
+import React, { FC, ChangeEventHandler, MouseEventHandler } from "react";
 
 import {
   Button,
@@ -38,79 +38,81 @@ export const FilterOptions: FC<{
   handleTimeSlotChange: MouseEventHandler;
   currentDay: string;
   handleDayChange: MouseEventHandler;
-}> = ({
-  handleSearchTextChange,
-  timeSlot,
-  handleTimeSlotChange,
-  currentDay,
-  handleDayChange,
-}) => {
-  return (
-    <Flex direction={["column", "row"]} mt="2" px={["4", "8"]} align="center">
-      <Menu>
-        <MenuButton
-          as={Button}
-          colorScheme="linkedin"
-          size="md"
-          width={["full", "25vw"]}
-          leftIcon={<CalendarIcon />}
-          rightIcon={<ChevronDownIcon />}
-          margin="5px"
-        >
-          {currentDay}
-        </MenuButton>
-        <MenuList>
-          <MenuGroup title="Day">
-            {dayList.map((selectedDay: string, i: number) => (
-              <MenuItem
-                value={selectedDay}
-                key={i}
-                icon={<CalendarIcon />}
-                onClick={handleDayChange}
-              >
-                {selectedDay}
-              </MenuItem>
-            ))}
-          </MenuGroup>
-        </MenuList>
-      </Menu>
-      <Menu>
-        <MenuButton
-          as={Button}
-          colorScheme="linkedin"
-          size="md"
-          width={["full", "25vw"]}
-          leftIcon={<TimeIcon />}
-          rightIcon={<ChevronDownIcon />}
-          margin="5px"
-        >
-          {timeSlot}
-        </MenuButton>
-        <MenuList>
-          <MenuGroup title="Timeslot">
-            {timeSlots.map((slot: string, i: number) => (
-              <MenuItem
-                value={slot}
-                key={i}
-                icon={<TimeIcon />}
-                onClick={handleTimeSlotChange}
-              >
-                {slot}
-              </MenuItem>
-            ))}
-          </MenuGroup>
-        </MenuList>
-      </Menu>
+}> = React.memo(
+  ({
+    handleSearchTextChange,
+    timeSlot,
+    handleTimeSlotChange,
+    currentDay,
+    handleDayChange,
+  }) => {
+    return (
+      <Flex direction={["column", "row"]} mt="2" px={["4", "8"]} align="center">
+        <Menu>
+          <MenuButton
+            as={Button}
+            colorScheme="linkedin"
+            size="md"
+            width={["full", "25vw"]}
+            leftIcon={<CalendarIcon />}
+            rightIcon={<ChevronDownIcon />}
+            margin="5px"
+          >
+            {currentDay}
+          </MenuButton>
+          <MenuList>
+            <MenuGroup title="Day">
+              {dayList.map((selectedDay: string, i: number) => (
+                <MenuItem
+                  value={selectedDay}
+                  key={i}
+                  icon={<CalendarIcon />}
+                  onClick={handleDayChange}
+                >
+                  {selectedDay}
+                </MenuItem>
+              ))}
+            </MenuGroup>
+          </MenuList>
+        </Menu>
+        <Menu>
+          <MenuButton
+            as={Button}
+            colorScheme="linkedin"
+            size="md"
+            width={["full", "25vw"]}
+            leftIcon={<TimeIcon />}
+            rightIcon={<ChevronDownIcon />}
+            margin="5px"
+          >
+            {timeSlot}
+          </MenuButton>
+          <MenuList>
+            <MenuGroup title="Timeslot">
+              {timeSlots.map((slot: string, i: number) => (
+                <MenuItem
+                  value={slot}
+                  key={i}
+                  icon={<TimeIcon />}
+                  onClick={handleTimeSlotChange}
+                >
+                  {slot}
+                </MenuItem>
+              ))}
+            </MenuGroup>
+          </MenuList>
+        </Menu>
 
-      <Input
-        borderColor="linkedinBlue"
-        colorScheme="linkedin"
-        onChange={handleSearchTextChange}
-        placeholder="Room name... AMDLAB | ART-01-19"
-        variant="filled"
-        width={["full", "50vw"]}
-        margin="5px"
-      />
-    </Flex>
-  );
-};
+        <Input
+          borderColor="linkedinBlue"
+          colorScheme="linkedin"
+          onChange={handleSearchTextChange}
+          placeholder="Room name... AMDLAB | ART-01-19"
+          variant="filled"
+          width={["full", "50vw"]}
+          margin="5px"
+        />
+      </Flex>
+    );
+  }
+);
