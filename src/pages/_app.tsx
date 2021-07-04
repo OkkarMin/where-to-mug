@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         openGraph={{
           type: "website",
           url: "https://wheretomug.ml",
-          site_name: "Which To Mug",
+          site_name: "Where To Mug",
           title: "Where To Mug | NTU",
           description:
             "Ever wonder which tutorial rooms are 'free'? Where To Mug is here to help you determine which tutorial rooms are free and which are not 😊",
