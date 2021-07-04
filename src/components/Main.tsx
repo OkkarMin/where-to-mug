@@ -28,11 +28,8 @@ export const Main: FC<{}> = () => {
   const [currentDay, setCurrentDay] = useState<string>(
     isWeekDay(numberDay) ? numberDayToStringDay[numberDay] : "MON"
   );
+  const [confirmSearchText, setConfirmSearchText] = useState<string>("");
 
-  const handleSearchTextDebounce = useCallback(
-    debounce((e) => setSearchText(e.target.value), 700),
-    []
-  );
   const handleTimeSlotSelectDebounce = useCallback(
     debounce((e) => setTimeSlot(e.target.value), 125),
     []
@@ -42,10 +39,6 @@ export const Main: FC<{}> = () => {
     []
   );
 
-  const handleSearchTextChange = useCallback(
-    (e: ChangeEvent<any>) => handleSearchTextDebounce(e),
-    []
-  );
   const handleTimeSlotChange = useCallback(
     (e: ChangeEvent<any>) => handleTimeSlotSelectDebounce(e),
     []
@@ -54,6 +47,14 @@ export const Main: FC<{}> = () => {
     (e: ChangeEvent<any>) => handleCurrentDaySelectDebounce(e),
     []
   );
+  const handleSearchTextChange = (e: ChangeEvent<any>) =>
+    setSearchText(e.target.value);
+  const handleSearchTextButton = () => setConfirmSearchText(searchText);
+  const handleSearchTextEnterKey = (e) => {
+    if (e.key === "Enter") {
+      setConfirmSearchText(searchText);
+    }
+  };
 
   return (
     <Flex direction="column" w="full" h="auto" minH="100vh" bg="gray.100">
@@ -78,14 +79,17 @@ export const Main: FC<{}> = () => {
         </Link>
       </Flex>
       <FilterOptions
-        handleSearchTextChange={handleSearchTextChange}
         timeSlot={timeSlot}
         handleTimeSlotChange={handleTimeSlotChange}
         currentDay={currentDay}
         handleDayChange={handleDayChange}
+        searchText={searchText}
+        handleSearchTextChange={handleSearchTextChange}
+        handleSearchTextButton={handleSearchTextButton}
+        handleSearchTextEnterKey={handleSearchTextEnterKey}
       />
       <FreeRoomsCardList
-        searchText={searchText}
+        searchText={confirmSearchText}
         timeSlot={timeSlot}
         currentDay={currentDay}
       />
