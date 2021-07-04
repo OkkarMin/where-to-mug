@@ -8,9 +8,10 @@ import React, {
 import {
   Button,
   Flex,
-  HStack,
   IconButton,
   Input,
+  InputGroup,
+  InputRightElement,
   Menu,
   MenuButton,
   MenuGroup,
@@ -123,7 +124,8 @@ export const FilterOptions: FC<{
             </MenuGroup>
           </MenuList>
         </Menu>
-        <HStack width={["full", "auto"]} margin="5px">
+
+        <InputGroup width={["full", "50vw"]} margin="5px">
           <Input
             borderColor="linkedinBlue"
             colorScheme="linkedin"
@@ -132,17 +134,18 @@ export const FilterOptions: FC<{
             placeholder="Room name... AMDLAB | ART-01-19"
             value={searchText}
             variant="filled"
-            width={["full", "50vw"]}
           />
-          <IconButton
-            aria-label="Search button"
-            onClick={handleSearchTextButton}
-            rounded="md"
-            size="md"
-          >
-            <SearchIcon />
-          </IconButton>
-        </HStack>
+          <InputRightElement>
+            <IconButton
+              aria-label="Search button"
+              onClick={handleSearchTextButton}
+              rounded="md"
+              size="sm"
+            >
+              <SearchIcon />
+            </IconButton>
+          </InputRightElement>
+        </InputGroup>
       </Flex>
     );
   }
