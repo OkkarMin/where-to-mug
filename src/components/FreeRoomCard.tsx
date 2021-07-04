@@ -9,7 +9,7 @@ import {
   Link,
   SimpleGrid,
 } from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { RiDirectionLine } from "react-icons/ri";
 
 export interface IFreeRoomCard {
   timeSlots: Record<string, boolean>;
@@ -63,7 +63,8 @@ export const FreeRoomCard: FC<IFreeRoomCard> = React.memo(
                 rounded="md"
                 backgroundColor="white"
                 aria-label="Open this location in NTU Map website"
-                icon={<ExternalLinkIcon boxSize="1.5em" />}
+                fontSize="2xl"
+                icon={<RiDirectionLine />}
               />
             </Link>
           </HStack>
