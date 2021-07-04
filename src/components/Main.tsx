@@ -47,8 +47,10 @@ export const Main: FC<{}> = () => {
     (e: ChangeEvent<any>) => handleCurrentDaySelectDebounce(e),
     []
   );
-  const handleSearchTextChange = (e: ChangeEvent<any>) =>
-    setSearchText(e.target.value);
+  const handleSearchTextChange = useCallback(
+    (e: ChangeEvent<any>) => setSearchText(e.target.value),
+    []
+  );
   const handleSearchTextButton = () => setConfirmSearchText(searchText);
   const handleSearchTextEnterKey = (e) => {
     if (e.key === "Enter") {
