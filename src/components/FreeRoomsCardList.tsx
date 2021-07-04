@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 
 import { Spinner, SimpleGrid, Box } from "@chakra-ui/react";
 
@@ -12,7 +12,7 @@ export const FreeRoomsCardList: FC<{
   searchText: string;
   timeSlot: string;
   currentDay: string;
-}> = ({ searchText, timeSlot, currentDay }) => {
+}> = React.memo(({ searchText, timeSlot, currentDay }) => {
   const [fliteredRooms, setFliteredRooms] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -57,4 +57,4 @@ export const FreeRoomsCardList: FC<{
   ) : (
     <RoomNotFound />
   );
-};
+});

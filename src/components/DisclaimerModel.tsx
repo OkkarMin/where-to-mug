@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import React, { FC, useRef } from "react";
 import Image from "next/image";
 
 import {
@@ -19,7 +19,7 @@ import {
 import { TimeSlotBadge } from "./FreeRoomCard";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
-export const DisclaimerModel: FC<{}> = () => {
+export const DisclaimerModel: FC<{}> = React.memo(() => {
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
   const headerRef = useRef();
 
@@ -93,4 +93,4 @@ export const DisclaimerModel: FC<{}> = () => {
       </ModalContent>
     </Modal>
   );
-};
+});

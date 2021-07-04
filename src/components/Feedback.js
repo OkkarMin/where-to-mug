@@ -1,3 +1,4 @@
+import React from "react";
 import * as Sentry from "@sentry/nextjs";
 
 import {
@@ -26,7 +27,7 @@ import { motion } from "framer-motion";
 
 const MotionBox = motion(Circle);
 
-export const Feedback = () => {
+export const Feedback = React.memo(() => {
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -166,4 +167,4 @@ export const Feedback = () => {
       </Modal>
     </>
   );
-};
+});
