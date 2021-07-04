@@ -1,8 +1,15 @@
-import React, { FC, ChangeEventHandler, MouseEventHandler } from "react";
+import React, {
+  FC,
+  ChangeEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+} from "react";
 
 import {
   Button,
   Flex,
+  HStack,
+  IconButton,
   Input,
   Menu,
   MenuButton,
@@ -10,7 +17,12 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import { CalendarIcon, ChevronDownIcon, TimeIcon } from "@chakra-ui/icons";
+import {
+  CalendarIcon,
+  ChevronDownIcon,
+  SearchIcon,
+  TimeIcon,
+} from "@chakra-ui/icons";
 
 const timeSlots = [
   "ALL",
@@ -33,18 +45,24 @@ const timeSlots = [
 const dayList = ["MON", "TUE", "WED", "THU", "FRI"];
 
 export const FilterOptions: FC<{
-  handleSearchTextChange: ChangeEventHandler;
   timeSlot: string;
   handleTimeSlotChange: MouseEventHandler;
   currentDay: string;
   handleDayChange: MouseEventHandler;
+  searchText: string;
+  handleSearchTextChange: ChangeEventHandler;
+  handleSearchTextButton: MouseEventHandler;
+  handleSearchTextEnterKey: KeyboardEventHandler;
 }> = React.memo(
   ({
-    handleSearchTextChange,
     timeSlot,
     handleTimeSlotChange,
     currentDay,
     handleDayChange,
+    searchText,
+    handleSearchTextChange,
+    handleSearchTextButton,
+    handleSearchTextEnterKey,
   }) => {
     return (
       <Flex direction={["column", "row"]} mt="2" px={["4", "8"]} align="center">
@@ -105,16 +123,26 @@ export const FilterOptions: FC<{
             </MenuGroup>
           </MenuList>
         </Menu>
-
-        <Input
-          borderColor="linkedinBlue"
-          colorScheme="linkedin"
-          onChange={handleSearchTextChange}
-          placeholder="Room name... AMDLAB | ART-01-19"
-          variant="filled"
-          width={["full", "50vw"]}
-          margin="5px"
-        />
+        <HStack width={["full", "auto"]} margin="5px">
+          <Input
+            borderColor="linkedinBlue"
+            colorScheme="linkedin"
+            onChange={handleSearchTextChange}
+            onKeyUp={handleSearchTextEnterKey}
+            placeholder="Room name... AMDLAB | ART-01-19"
+            value={searchText}
+            variant="filled"
+            width={["full", "50vw"]}
+          />
+          <IconButton
+            aria-label="Search button"
+            onClick={handleSearchTextButton}
+            rounded="md"
+            size="md"
+          >
+            <SearchIcon />
+          </IconButton>
+        </HStack>
       </Flex>
     );
   }
