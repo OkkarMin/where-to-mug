@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import * as Sentry from "@sentry/nextjs";
 
 import {
@@ -30,6 +30,7 @@ const MotionBox = motion(Circle);
 export const Feedback = React.memo(() => {
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = useRef();
 
   function validateMsg(value) {
     let error;
@@ -54,7 +55,7 @@ export const Feedback = React.memo(() => {
         </Circle>
       </MotionBox>
 
-      <Modal size="6xl" isOpen={isOpen} onClose={onClose}>
+      <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
         <Formik
           initialValues={{ name: "", email: "", message: "" }}
           onSubmit={(values) => {
@@ -106,9 +107,9 @@ export const Feedback = React.memo(() => {
                         isInvalid={form.errors.name && form.touched.name}
                       >
                         <FormLabel marginTop="2" htmlFor="name">
-                          Name
+                          Your Name
                         </FormLabel>
-                        <Input {...field} id="name" placeholder="Dankar-san" />
+                        <Input {...field} id="name" placeholder="Jane Doe" />
                         <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                       </FormControl>
                     )}
@@ -120,12 +121,12 @@ export const Feedback = React.memo(() => {
                         isInvalid={form.errors.email && form.touched.email}
                       >
                         <FormLabel marginTop="2" htmlFor="email">
-                          Email
+                          Your Email
                         </FormLabel>
                         <Input
                           {...field}
                           id="email"
-                          placeholder="dankarsan@email.com"
+                          placeholder="example@domain.com"
                         />
                         <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                       </FormControl>
@@ -138,10 +139,11 @@ export const Feedback = React.memo(() => {
                         isInvalid={form.errors.message && form.touched.message}
                       >
                         <FormLabel marginTop="2" htmlFor="message">
-                          Descirption*
+                          Description*
                         </FormLabel>
                         <Textarea
                           {...field}
+                          ref={initialRef}
                           id="message"
                           placeholder="Let us know your.. feature request | feedback"
                         />
