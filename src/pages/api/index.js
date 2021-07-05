@@ -1,8 +1,9 @@
 import room_occupancy from "../../../data/room_occupancy.json";
+import cluster_data from "../../../data/rooms_with_cluster.json";
 
 export default function handler(req, res) {
   const { query } = req;
-  const { currentDay, timeSlot, searchText } = query;
+  const { currentDay, timeSlot, searchText, cluster } = query;
 
   const rooms = Object.keys(room_occupancy[currentDay]).sort();
 
@@ -14,5 +15,12 @@ export default function handler(req, res) {
     return hasRoomName && hasAvailableSlot;
   });
 
-  return res.status(200).json(fliteredRooms);
+  const fliteredRoomsByCluster = fliteredRooms.filter((room) => {
+    const targetCluster =
+      cluster == "ALL" ? true : cluster_data[room] == cluster;
+
+    return targetCluster;
+  });
+
+  return res.status(200).json(fliteredRoomsByCluster);
 }

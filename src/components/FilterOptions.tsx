@@ -24,6 +24,7 @@ import {
   SearchIcon,
   TimeIcon,
 } from "@chakra-ui/icons";
+import { BiBuildings } from "react-icons/bi";
 
 const timeSlots = [
   "ALL",
@@ -45,6 +46,23 @@ const timeSlots = [
 
 const dayList = ["MON", "TUE", "WED", "THU", "FRI"];
 
+const clusterList = [
+  "ALL",
+  "ADM",
+  "ARC",
+  "BIE",
+  "CBE",
+  "HSS",
+  "LHS",
+  "NIE",
+  "NS",
+  "SBS",
+  "SPMS",
+  "SS",
+  "WKWSCI",
+  "OTHERS",
+];
+
 export const FilterOptions: FC<{
   timeSlot: string;
   handleTimeSlotChange: MouseEventHandler;
@@ -54,6 +72,8 @@ export const FilterOptions: FC<{
   handleSearchTextChange: ChangeEventHandler;
   handleSearchTextButton: MouseEventHandler;
   handleSearchTextEnterKey: KeyboardEventHandler;
+  cluster: string;
+  handleClusterChange: MouseEventHandler;
 }> = React.memo(
   ({
     timeSlot,
@@ -64,9 +84,39 @@ export const FilterOptions: FC<{
     handleSearchTextChange,
     handleSearchTextButton,
     handleSearchTextEnterKey,
+    cluster,
+    handleClusterChange,
   }) => {
     return (
       <Flex direction={["column", "row"]} mt="2" px={["4", "8"]} align="center">
+        <Menu autoSelect={false} isLazy={true}>
+          <MenuButton
+            as={Button}
+            colorScheme="linkedin"
+            size="md"
+            width={["full", "25vw"]}
+            leftIcon={<BiBuildings />}
+            rightIcon={<ChevronDownIcon />}
+            margin="5px"
+          >
+            {cluster}
+          </MenuButton>
+          <MenuList>
+            <MenuGroup title="Cluster">
+              {clusterList.map((selectedCluster: string, i: number) => (
+                <MenuItem
+                  value={selectedCluster}
+                  key={i}
+                  icon={<BiBuildings />}
+                  onClick={handleClusterChange}
+                >
+                  {selectedCluster}
+                </MenuItem>
+              ))}
+            </MenuGroup>
+          </MenuList>
+        </Menu>
+
         <Menu autoSelect={false} isLazy={true}>
           <MenuButton
             as={Button}
