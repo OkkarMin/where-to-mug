@@ -11,7 +11,7 @@ export default function handler(req, res) {
     const hasRoomName = room.includes(searchText.toUpperCase());
     const hasAvailableSlot =
       timeSlot == "ALL" ? true : room_occupancy[currentDay][room][timeSlot];
-    const targetCluster =
+    const isInTargetCluster =
       cluster == "ALL" ? true : cluster_data[room] == cluster;
 
     return hasRoomName && hasAvailableSlot && targetCluster;
