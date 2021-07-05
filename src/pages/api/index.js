@@ -11,16 +11,11 @@ export default function handler(req, res) {
     const hasRoomName = room.includes(searchText.toUpperCase());
     const hasAvailableSlot =
       timeSlot == "ALL" ? true : room_occupancy[currentDay][room][timeSlot];
-
-    return hasRoomName && hasAvailableSlot;
-  });
-
-  const fliteredRoomsByCluster = fliteredRooms.filter((room) => {
     const targetCluster =
       cluster == "ALL" ? true : cluster_data[room] == cluster;
 
-    return targetCluster;
+    return hasRoomName && hasAvailableSlot && targetCluster;
   });
 
-  return res.status(200).json(fliteredRoomsByCluster);
+  return res.status(200).json(fliteredRooms);
 }
