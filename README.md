@@ -1,28 +1,24 @@
-# Table of Contents
-
-1. [Where To Mug](#where-to-mug)
-
-2. [Demo](#demo)
-
-3. [Tech Stack](#Tech-Stack)
-
-4. [Documentation](#Documentation)
-
-5. [Run Locally](#Run-Locally)
-
-6. [Deployment](#Deployment)
-
-7. [Environment Variables](#Environment-Variables)
-
-8. [API Reference](#API-Reference)
-
-9. [Acknowledgements](#Acknowledgements)
-
-10. [Feedback](#Feedback)
-
-11. [Authors](#Authors)
-
 # Where To Mug
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#Introduction">Introduction</a></li>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#Tech-Stack">Tech Stack</a></li>
+    <li><a href="#Documentation">Documentation</a></li>
+    <li><a href="#Run-Locally">Run Locally</a></li>
+    <li><a href="#Deployment">Deployment</a></li>
+    <li><a href="#Environment-Variables">Environment Variables</a></li>
+    <li><a href="#API-Reference">API Reference</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#Feedback">Feedback</a></li>
+    <li><a href="#Authors">Authors</a></li>
+  </ol>
+</details>
+
+# Introduction
 
 Ever wonder which tutorial room is free\* and which is not? 🤨
 
