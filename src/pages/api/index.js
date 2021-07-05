@@ -14,7 +14,7 @@ export default function handler(req, res) {
     const isInTargetCluster =
       cluster == "ALL" ? true : cluster_data[room] == cluster;
 
-    return hasRoomName && hasAvailableSlot && targetCluster;
+    return hasRoomName && hasAvailableSlot && isInTargetCluster;
   });
 
   return res.status(200).json(fliteredRooms);
