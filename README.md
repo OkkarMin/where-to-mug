@@ -1,26 +1,26 @@
 # Table of Contents
 
-1.[Where To Mug](#where-to-mug)
+1. [Where To Mug](#where-to-mug)
 
-2.[Demo](#demo)
+2. [Demo](#demo)
 
-3.[Tech Stack](#Tech-Stack)
+3. [Tech Stack](#Tech-Stack)
 
-4.[Documentation](#Documentation)
+4. [Documentation](#Documentation)
 
-5.[Run Locally](#Run-Locally)
+5. [Run Locally](#Run-Locally)
 
-6.[Deployment](#Deployment)
+6. [Deployment](#Deployment)
 
-7.[Environment Variables](#Environment-Variables)
+7. [Environment Variables](#Environment-Variables)
 
-8.[API Reference](#API-Reference)
+8. [API Reference](#API-Reference)
 
-9.[Acknowledgements](#Acknowledgements)
+9. [Acknowledgements](#Acknowledgements)
 
-10.[Feedback](#Feedback)
+10. [Feedback](#Feedback)
 
-11.[Authors](#Authors)
+11. [Authors](#Authors)
 
 # Where To Mug
 
