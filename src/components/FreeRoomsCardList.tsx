@@ -12,7 +12,8 @@ export const FreeRoomsCardList: FC<{
   searchText: string;
   timeSlot: string;
   currentDay: string;
-}> = React.memo(({ searchText, timeSlot, currentDay }) => {
+  cluster: string;
+}> = React.memo(({ searchText, timeSlot, currentDay, cluster }) => {
   const [fliteredRooms, setFliteredRooms] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -24,7 +25,7 @@ export const FreeRoomsCardList: FC<{
         const encodedSearchText = encodeURIComponent(searchText);
 
         const response = await fetch(
-          `/api?currentDay=${currentDay}&timeSlot=${timeSlot}&searchText=${encodedSearchText}`
+          `/api?currentDay=${currentDay}&timeSlot=${timeSlot}&searchText=${encodedSearchText}&cluster=${cluster}`
         );
         const data = await response.json();
         setFliteredRooms(data);
@@ -35,7 +36,7 @@ export const FreeRoomsCardList: FC<{
       setLoading(false);
     };
     fetchData();
-  }, [searchText, timeSlot, currentDay]);
+  }, [searchText, timeSlot, currentDay, cluster]);
 
   const haveRooms = fliteredRooms.length > 0;
 

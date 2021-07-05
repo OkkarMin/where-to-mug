@@ -29,6 +29,7 @@ export const Main: FC<{}> = () => {
     isWeekDay(numberDay) ? numberDayToStringDay[numberDay] : "MON"
   );
   const [confirmSearchText, setConfirmSearchText] = useState<string>("");
+  const [cluster, setCluster] = useState<string>("ALL");
 
   const handleTimeSlotSelectDebounce = useCallback(
     debounce((e) => setTimeSlot(e.target.value), 125),
@@ -38,7 +39,15 @@ export const Main: FC<{}> = () => {
     debounce((e) => setCurrentDay(e.target.value), 125),
     []
   );
+  const handleClusterSelectDebounce = useCallback(
+    debounce((e) => setCluster(e.target.value), 125),
+    []
+  );
 
+  const handleClusterChange = useCallback(
+    (e: ChangeEvent<any>) => handleClusterSelectDebounce(e),
+    []
+  );
   const handleTimeSlotChange = useCallback(
     (e: ChangeEvent<any>) => handleTimeSlotSelectDebounce(e),
     []
@@ -89,11 +98,14 @@ export const Main: FC<{}> = () => {
         handleSearchTextChange={handleSearchTextChange}
         handleSearchTextButton={handleSearchTextButton}
         handleSearchTextEnterKey={handleSearchTextEnterKey}
+        cluster={cluster}
+        handleClusterChange={handleClusterChange}
       />
       <FreeRoomsCardList
         searchText={confirmSearchText}
         timeSlot={timeSlot}
         currentDay={currentDay}
+        cluster={cluster}
       />
       <VStack
         direction="column"
