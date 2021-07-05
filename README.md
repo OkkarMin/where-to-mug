@@ -1,3 +1,27 @@
+# Table of Contents
+
+1.[Where To Mug](#where-to-mug)
+
+2.[Demo](#demo)
+
+3.[Tech Stack](#Tech-Stack)
+
+4.[Documentation](#Documentation)
+
+5.[Run Locally](#Run-Locally)
+
+6.[Deployment](#Deployment)
+
+7.[Environment Variables](#Environment-Variables)
+
+8.[API Reference](#API-Reference)
+
+9.[Acknowledgements](#Acknowledgements)
+
+10.[Feedback](#Feedback)
+
+11.[Authors](#Authors)
+
 # Where To Mug
 
 Ever wonder which tutorial room is free\* and which is not? 🤨
@@ -13,11 +37,12 @@ Search which tutorial room is free by:
 
 The website is mobile respondsive too!!
 
-[Link to website](https://wheretomug.ml/)
+Link to website:
+[https://wheretomug.ml/](https://wheretomug.ml/)
 
 ## Demo
 
-![Demo](./public/assets/where-to-mug-demo.gif)
+![Demo](./doc/where-to-mug-demo.gif)
 
 ## Tech Stack
 
@@ -25,33 +50,22 @@ The website is mobile respondsive too!!
 
 **Server:** NextJs API routes, Vercel
 
+**Others:** EmailJs, SentryIO
+
+We used EmailJs to collect feedbacks and SentryIO to log errors encountered by users.
+
 ## Documentation
 
 which-room-free/  
 ├─📁 data  
-│ ├─ 2021_1_data.json  
-│ ├─ data_wrangle.ipynb  
-│ ├─ data_wrangle_new_idea.ipynb  
-│ ├─ data_wrangle_ying_sheng_request.ipynb  
 │ ├─ rooms_with_cluster.json  
-│ ├─ room_datastructure.json  
 │ ├─ room_ids.json  
 │ ├─ room_occupancy.json  
-│ ├─ room_occupancy_initial.json  
-│ └─ ying_sheng_requested_data.json  
 ├─📁 public  
 │ ├─📁 assets  
 │ │ ├─ room_not_found_image.svg  
 │ │ ├─ study_modal_image.svg  
 │ │ └─ weekend_chill.svg  
-│ ├─ android-chrome-192x192.png  
-│ ├─ android-chrome-512x512.png  
-│ ├─ apple-touch-icon.png  
-│ ├─ favicon-16x16.png  
-│ ├─ favicon-32x32.png  
-│ ├─ favicon.ico  
-│ ├─ meta_image.png  
-│ └─ site.webmanifest  
 ├─📁 src  
 │ ├─📁 components  
 │ │ ├─📁 autoScrollTop  
@@ -157,7 +171,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Feedback
 
-If you have any feedback, please raise an issue
+If you have any feedback, please raise an issue in this repository
 
 or
 
