@@ -101,7 +101,10 @@ export const FilterOptions: FC<{
           >
             {cluster}
           </MenuButton>
-          <MenuList>
+          <MenuList
+            height={["70vh", "70vh", "60vh", "auto"]}
+            overflowY={["auto", "auto", "auto", "unset"]}
+          >
             <MenuGroup title="Cluster">
               {clusterList.map((selectedCluster: string, i: number) => (
                 <MenuItem
