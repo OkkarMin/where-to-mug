@@ -47,8 +47,9 @@ export const DisclaimerModel: FC<{}> = React.memo(() => {
           Search which tutorial room is free by:
           <UnorderedList>
             <ListItem>day of the week</ListItem>
-            <ListItem>room name and</ListItem>
+            <ListItem>room name</ListItem>
             <ListItem>time slot</ListItem>
+            <ListItem>cluster</ListItem>
           </UnorderedList>
           <br />
           <VStack>
