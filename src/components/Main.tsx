@@ -8,7 +8,7 @@ import { debounce } from "lodash";
 import { DisclaimerModel } from "./DisclaimerModel";
 import { FilterOptions } from "./FilterOptions";
 import { FreeRoomsCardList } from "./FreeRoomsCardList";
-import { ScrollToTop } from "./autoScrollTop/ScrollToTop";
+import { ScrollToTop } from "./ScrollToTop";
 import { Feedback } from "./Feedback";
 
 const numberDayToStringDay = {
