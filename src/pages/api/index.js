@@ -1,3 +1,5 @@
+import Fuse from "fuse.js";
+
 import room_occupancy from "../../../data/room_occupancy.json";
 import cluster_data from "../../../data/rooms_with_cluster.json";
 
@@ -7,15 +9,32 @@ export default function handler(req, res) {
 
   const rooms = Object.keys(room_occupancy[currentDay]).sort();
 
+  const fuseOptions = {
+    threshold: 0.35,
+  };
+
   const fliteredRooms = rooms.filter((room) => {
-    const hasRoomName = room.includes(searchText.toUpperCase());
     const hasAvailableSlot =
       timeSlot == "ALL" ? true : room_occupancy[currentDay][room][timeSlot];
     const isInTargetCluster =
       cluster == "ALL" ? true : cluster_data[room] == cluster;
 
-    return hasRoomName && hasAvailableSlot && isInTargetCluster;
+    return hasAvailableSlot && isInTargetCluster;
   });
 
-  return res.status(200).json(fliteredRooms);
+  const fuse = new Fuse(fliteredRooms, fuseOptions);
+
+  let matchingLocation = [];
+  let finalResult = [];
+
+  if (searchText == "") {
+    finalResult = fliteredRooms;
+  } else {
+    matchingLocation = fuse.search(searchText);
+    matchingLocation.map((object, _) => {
+      finalResult.push(object.item);
+    });
+  }
+
+  return res.status(200).json(finalResult);
 }
