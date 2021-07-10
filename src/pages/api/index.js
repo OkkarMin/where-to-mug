@@ -22,7 +22,9 @@ export default function handler(req, res) {
     return hasAvailableSlot && isInTargetCluster;
   });
 
-  const fuse = new Fuse(fliteredRooms, fuseOptions);
+  const fuse = new Fuse(fliteredRooms, {
+     threshold: 0.35,
+   });
 
   let matchingLocation = [];
   let finalResult = [];
