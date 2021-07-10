@@ -9,10 +9,6 @@ export default function handler(req, res) {
 
   const rooms = Object.keys(room_occupancy[currentDay]).sort();
 
-  const fuseOptions = {
-    threshold: 0.35,
-  };
-
   const fliteredRooms = rooms.filter((room) => {
     const hasAvailableSlot =
       timeSlot == "ALL" ? true : room_occupancy[currentDay][room][timeSlot];
@@ -23,8 +19,8 @@ export default function handler(req, res) {
   });
 
   const fuse = new Fuse(fliteredRooms, {
-     threshold: 0.35,
-   });
+    threshold: 0.35,
+  });
 
   let matchingLocation = [];
   let finalResult = [];
