@@ -157,10 +157,11 @@ To run this project, you will need to add the following environment variables to
 
 ## Acknowledgements
 
-- [@kenrick95](https://github.com/kenrick95/plan/tree/master/back_end/data/parsed/json) for the rooms data
-- [@Raymond](https://github.com/Cozinater) for the project idea
-- [@Kayle](https://github.com/HJunyuan) for improvement suggestions
-- [@JiaYin](https://github.com/lhinjy) for helping test and provide ui related feedback
+- <img src="https://avatars.githubusercontent.com/u/3090380?v=4" alt="kendrik" height="50px" width="50px" mask="circle"/>[kenrick95](https://github.com/kenrick95/plan/tree/master/back_end/data/parsed/json) for the rooms data
+- <img src="https://avatars.githubusercontent.com/u/29200919?v=4" alt="raymond" height="50px" width="50px" mask="circle"/>[Raymond](https://github.com/Cozinater) for the project idea
+- <img src="https://avatars.githubusercontent.com/u/37650399?v=4" alt="kayle" height="50px" width="50px" mask="circle"/>[Kayle](https://github.com/HJunyuan) for improvement suggestions
+- <img src="https://avatars.githubusercontent.com/u/48309567?v=4" alt="jiayin" height="50px" width="50px" mask="circle"/> [JiaYin](https://github.com/lhinjy) for helping test and provide ui related feedback
+- <img src="https://avatars.githubusercontent.com/u/77497788?v=4" alt="cherie" height="50px" width="50px" mask="circle"/> [Cherie](https://github.com/cheriechh) for writing the disclaimer model
 
 ## Feedback
 
