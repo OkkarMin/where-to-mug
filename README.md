@@ -157,10 +157,11 @@ To run this project, you will need to add the following environment variables to
 
 ## Acknowledgements
 
-- [@kenrick95](https://github.com/kenrick95/plan/tree/master/back_end/data/parsed/json) for the rooms data
-- [@Raymond](https://github.com/Cozinater) for the project idea
-- [@Kayle](https://github.com/HJunyuan) for improvement suggestions
-- [@JiaYin](https://github.com/lhinjy) for helping test and provide ui related feedback
+- <img src="https://avatars.githubusercontent.com/u/3090380?s=50&v=4" alt="kendrik" height="50px" width="50px" /> [Kenrick95](https://github.com/kenrick95/plan/tree/master/back_end/data/parsed/json) for the rooms data
+- <img src="https://avatars.githubusercontent.com/u/29200919?s=50&v=4" alt="raymond" height="50px" width="50px" /> [Raymond](https://github.com/Cozinater) for the project idea
+- <img src="https://avatars.githubusercontent.com/u/37650399?s=50&v=4" alt="kyle" height="50px" width="50px" /> [Kyle](https://github.com/HJunyuan) for improvement suggestions
+- <img src="https://avatars.githubusercontent.com/u/48309567?s=50&v=4" alt="jiayin" height="50px" width="50px" /> [JiaYin](https://github.com/lhinjy) for helping test and provide ui related feedback
+- <img src="https://avatars.githubusercontent.com/u/77497788?s=50&v=4" alt="cherie" height="50px" width="50px" /> [Cherie](https://github.com/cheriechh) for writing the disclaimer model
 
 ## Feedback
 
@@ -172,5 +173,5 @@ Write in to us using the feedback from, located at the bottom right of the [webs
 
 ## Authors
 
-- [@YingSheng](https://yeowys.com)
-- [@OkkarMin](https://okkarm.in)
+- <img src="https://avatars.githubusercontent.com/u/70012669?s=50&v=4" alt="yingsheng"  /> [YingSheng](https://yeowys.com)
+- <img src="https://avatars.githubusercontent.com/u/24297303?s=50&v=4" alt="okkar"  /> [OkkarMin](https://okkarm.in)
