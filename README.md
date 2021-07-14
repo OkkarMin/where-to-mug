@@ -173,5 +173,5 @@ Write in to us using the feedback from, located at the bottom right of the [webs
 
 ## Authors
 
-- [@YingSheng](https://yeowys.com)
-- [@OkkarMin](https://okkarm.in)
+- <img src="https://avatars.githubusercontent.com/u/70012669?v=4" alt="cherie" height="50px" width="50px" /> [YingSheng](https://yeowys.com)
+- <img src="https://avatars.githubusercontent.com/u/24297303?v=4" alt="cherie" height="50px" width="50px" /> [OkkarMin](https://okkarm.in)
