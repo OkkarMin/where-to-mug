@@ -99,7 +99,7 @@ export const FilterOptions: FC<{
             rightIcon={<ChevronDownIcon />}
             margin="5px"
           >
-            {cluster}
+            Cluster: {cluster}
           </MenuButton>
           <MenuList
             height={["70vh", "70vh", "60vh", "auto"]}
@@ -130,7 +130,7 @@ export const FilterOptions: FC<{
             rightIcon={<ChevronDownIcon />}
             margin="5px"
           >
-            {currentDay}
+            Day: {currentDay}
           </MenuButton>
           <MenuList>
             <MenuGroup title="Day">
@@ -157,7 +157,7 @@ export const FilterOptions: FC<{
             rightIcon={<ChevronDownIcon />}
             margin="5px"
           >
-            {timeSlot}
+            Timeslot: {timeSlot}
           </MenuButton>
           <MenuList
             height={["70vh", "70vh", "60vh", "auto"]}
