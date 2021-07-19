@@ -1,8 +1,9 @@
-import React, { FC, useRef } from "react";
+import React, { FC, useRef, useState, useEffect } from "react";
 import Image from "next/image";
 
 import {
   Button,
+  Checkbox,
   Link,
   ListItem,
   Modal,
@@ -20,8 +21,28 @@ import { TimeSlotBadge } from "./FreeRoomCard";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export const DisclaimerModel: FC<{}> = React.memo(() => {
-  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
+  const { isOpen, onClose, onOpen } = useDisclosure();
+  const [isChecked, setIsChecked] = useState(true);
+
   const headerRef = useRef();
+
+  // Upon page load, check if the disclaimer should be shown. If it should,
+  // set the state to true.
+  useEffect(() => {
+    const shouldShowDisclaimer = JSON.parse(
+      localStorage.getItem("shouldShowDisclaimer")
+    );
+
+    shouldShowDisclaimer == null && onOpen(); // very first user visit to page
+    shouldShowDisclaimer && onOpen(); // user visited page before and checked box
+  }, []);
+
+  // On button click, set localStorage to true or false depending on the state
+  // of the checkbox and close the disclaimer modal.
+  function handleClick() {
+    localStorage.setItem("shouldShowDisclaimer", JSON.stringify(!isChecked));
+    onClose();
+  }
 
   return (
     <Modal
@@ -86,8 +107,17 @@ export const DisclaimerModel: FC<{}> = React.memo(() => {
           The tool is provided AS-IS. We take no responsibility for any events
           arising from use of this tool 😊
         </ModalBody>
-        <ModalFooter>
-          <Button colorScheme="linkedin" onClick={onClose}>
+        <ModalFooter justifyContent="space-between">
+          <Checkbox
+            justifySelf="flex-start"
+            isChecked={isChecked}
+            onChange={() => setIsChecked(!isChecked)}
+            colorScheme="linkedin"
+          >
+            I don't want to see this again
+          </Checkbox>
+
+          <Button colorScheme="linkedin" onClick={handleClick}>
             Understood 👌
           </Button>
         </ModalFooter>
