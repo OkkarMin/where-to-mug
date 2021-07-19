@@ -1,5 +1,21 @@
 {
-  "name": "with-chakra-ui-typescript",
+  "name": "where-to-mug",
+  "description": "Ntu tutorial room finder",
+  "homepage": "https://wheretomug.ml/",
+  "contributors": [
+    {
+      "name": "Okkar Min",
+      "url": "https://okkarm.in"
+    },
+    {
+      "name": "Yeow Ying Sheng",
+      "url": "https://yeowys.com/"
+    }
+  ],
+  "main": "index.tsx",
+  "bugs": {
+    "url": "https://github.com/OkkarMin/where-to-mug/issues"
+  },
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
