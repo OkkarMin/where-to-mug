@@ -109,7 +109,6 @@ export const DisclaimerModel: FC<{}> = React.memo(() => {
         </ModalBody>
         <ModalFooter justifyContent="space-between">
           <Checkbox
-            justifySelf="flex-start"
             isChecked={isChecked}
             onChange={() => setIsChecked(!isChecked)}
             colorScheme="linkedin"
