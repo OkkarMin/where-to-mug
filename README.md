@@ -161,7 +161,6 @@ To run this project, you will need to add the following environment variables to
 - <img src="https://avatars.githubusercontent.com/u/29200919?s=50&v=4" alt="raymond" height="50px" width="50px" /> [Raymond](https://github.com/Cozinater) for the project idea
 - <img src="https://avatars.githubusercontent.com/u/37650399?s=50&v=4" alt="kyle" height="50px" width="50px" /> [Kyle](https://github.com/HJunyuan) for improvement suggestions
 - <img src="https://avatars.githubusercontent.com/u/48309567?s=50&v=4" alt="jiayin" height="50px" width="50px" /> [JiaYin](https://github.com/lhinjy) for helping test and provide ui related feedback
-- <img src="https://avatars.githubusercontent.com/u/77497788?s=50&v=4" alt="cherie" height="50px" width="50px" /> [Cherie](https://github.com/cheriechh) for writing the disclaimer model
 
 ## Feedback
 
