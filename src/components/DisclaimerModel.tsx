@@ -33,8 +33,8 @@ export const DisclaimerModel: FC<{}> = React.memo(() => {
       localStorage.getItem("shouldShowDisclaimer")
     );
 
-    shouldShowDisclaimer == null && onOpen(); // very first user visit to page
-    shouldShowDisclaimer && onOpen(); // user visited page before and checked box
+    shouldShowDisclaimer == null && onOpen(); // very time first user visit to site
+    shouldShowDisclaimer && onOpen(); // user visited site before and checked box
   }, []);
 
   // On button click, set localStorage to true or false depending on the state
